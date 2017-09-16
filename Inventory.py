@@ -1,5 +1,4 @@
 import Item as I
-import Stuff as S
 
 class Inventory:
 
@@ -29,9 +28,3 @@ class Inventory:
                 self.inventory[item][1] -= num
             elif self.inventory[item][1] == num:
                 del self.inventory[item]
-            else:
-                print("Can't do that.")
-            
-
-    def showInventory(self):
-        
