@@ -1,3 +1,5 @@
+# Items will work as a pseudo database where all items for the game
+# will reside. If an item isn't in this file it won't exist in the game.
 # Items in the items dictionary will be formatted as follows:
 # key = item name
 # value = tuple of values for the key
