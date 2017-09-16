@@ -1,6 +1,14 @@
 import Items as I
 
+# Item defines what an item is and how other mudules
+# will interact with items.
+
 class Item:
+    
+# The init function will take an item name and
+# define the items attributes from the Items file.
+# Assumes that the item exists in the database Items.
+
     def __init__(self, n):
         self.name = n
         self.value = I.items[n][0]
