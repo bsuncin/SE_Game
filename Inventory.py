@@ -44,6 +44,23 @@ class Inventory:
         if num <= self.tokens:
             self.tokens -= num
             
+            
+# getTickets() will return the ticket amount the user has.        
+
+    def getTickets(self):
+        return self.tickets   
+    
+# addTickets(num) will add num to the amount of tickets the user has.    
+
+    def addTickets(self, num):
+        self.tickets += num    
+        
+# removeTickets(num) will remove amount num from the tickets the user has.        
+
+    def removeTickets(self, num):
+        if num <= self.tickets:
+            self.tickets -= num            
+            
 # addItem(item, num) will add an amount num of item item from the items data 
 # if it exists.            
 
@@ -62,3 +79,10 @@ class Inventory:
                 self.inventory[item][1] -= num
             elif self.inventory[item][1] == num:
                 del self.inventory[item]
+                
+ # checkAmount(item) will return item item's amount in the inventory.
+    
+    def checkAmount(self, item):
+        if item in self.inventory:
+            return self.inventory[item][1]
+        return 0;
