@@ -4,7 +4,7 @@
 # key = item name
 # value = tuple of values for the key
 # key : (Value, Physical Attack, Physical Defence, Magic Attack, Magic Defence,
-# Type, Health Recovery, Mana Recovery) 
+# Type, Health Recovery, Mana Recovery, Added health, Added Mana) 
 
-items = { "HP Potion": (200, 0, 0, 0, 0, "potion", 50, 0)
+items = { "HP Potion": (200, 0, 0, 0, 0, "potion", 50, 0, 0, 0)
           }
