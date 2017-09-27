@@ -33,7 +33,7 @@ class foodmachinebroke(Skill):
 
 # Attack Skills ##########################################################
 
-class Attack(foodmachinebroke):
+class Fire(foodmachinebroke):
     def __init__(self):
         #spells above a certain level will gain aoe when labled maybe
         super().__init__(name="Fire",
@@ -47,6 +47,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="on fire",
                          level=1)
+        
+class Ice(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Ice",
                          value=0,
                          desc="a blast of cold capable of freezing foes.",
@@ -58,6 +61,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="frozen",
                          level=1)
+        
+class Thunder(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Thunder",
                          value=0,
                          desc="Truly shocking.",
@@ -69,6 +75,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="shock",
                          level=1)
+        
+class Inferno(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Inferno",
                          value=0,
                          desc="Enough flames to evaporate an lake.",
@@ -80,6 +89,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="on fire",
                          level=1)
+        
+class Blizzard(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Blizzard",
                          value=0,
                          desc="an absolute cold capable of freezing the very air.",
@@ -91,6 +103,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="frozen",
                          level=1)
+        
+class Tempest(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Tempest",
                          value=0,
                          desc="Is that the air cracking, or their bones?",
@@ -102,6 +117,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="shock",
                          level=1)
+        
+class Explosion(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="EXPLOSION",
                          value=0,
                          desc="a blast of cold capable of freezing foes.",
@@ -113,6 +131,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+        
+class Obliterate(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="OBLITERATE",
                          value=0,
                          desc="a blast of cold capable of freezing foes.",
@@ -124,6 +145,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+        
+class HeavySwing(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Heavy Swing",
                          value=0,
                          desc="swing so hard you pull a muscle.",
@@ -135,7 +159,11 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+       
         # No Health Cost if wearing a helmet/armor rating is above a certain amount
+        
+class Headbutt(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Headbutt",
                          value=0,
                          desc="Nobody wins in a headbutt.",
@@ -147,6 +175,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+        
+class Cleave(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Cleave",
                          value=0,
                          desc="A rather large swing, capable of hitting multiple foes.",
@@ -158,6 +189,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+        
+class LasStrike(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Lascerating Strike",
                          value=0,
                          desc="A carefully placed stab to incite bleeding.",
@@ -169,6 +203,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="bleeding",
                          level=1)
+        
+class LastGamble(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Last Gamble",
                          value=0,
                          desc="A fools attempt at a lost battle",
@@ -180,7 +217,9 @@ class Attack(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
-class Buff(foodmachinebroke):
+        
+        
+class Heal(foodmachinebroke):
     def __init__(self):
         super().__init__(name="Heal",
                          value=0,
@@ -193,6 +232,9 @@ class Buff(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+        
+class GreatHeal(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Great Heal",
                          value=0,
                          desc="like a NEW bandaid.",
@@ -204,6 +246,9 @@ class Buff(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+        
+class Concentration(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Concentration",
                          value=50,
                          desc="building mana is hard.",
@@ -215,6 +260,9 @@ class Buff(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+        
+class Clarity(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Clarity",
                          value=0,
                          desc="building mana is easy.",
@@ -226,6 +274,9 @@ class Buff(foodmachinebroke):
                          buff="none",
                          debuff="none",
                          level=1)
+        
+class Rage(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Rage",
                          value=0,
                          desc="anger serves to increase your strength.",
@@ -237,6 +288,9 @@ class Buff(foodmachinebroke):
                          buff="atk+",
                          debuff="none",
                          level=1)
+        
+class Fortify(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Fortify",
                          value=0,
                          desc="strengthens skin to bolster defense.",
@@ -248,6 +302,9 @@ class Buff(foodmachinebroke):
                          buff="pdef+",
                          debuff="none",
                          level=1)
+        
+class Meditate(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Meditate",
                          value=0,
                          desc="builds mental barriers to increase magic resistance.",
@@ -259,6 +316,9 @@ class Buff(foodmachinebroke):
                          buff="mdef+",
                          debuff="none",
                          level=1)
+        
+class Stretch(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Stretch",
                          value=0,
                          desc="limber up to increase agility.",
@@ -270,6 +330,9 @@ class Buff(foodmachinebroke):
                          buff="agl+",
                          debuff="none",
                          level=1)
+        
+class FireWeapon(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Fire Weapon",
                          value=0,
                          desc="engulf your weapon in flames.",
@@ -281,6 +344,9 @@ class Buff(foodmachinebroke):
                          buff="none",
                          debuff="on fire",
                          level=1)
+        
+class IceWeapon(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Ice Weapon",
                          value=0,
                          desc="cool your blade with frost.",
@@ -292,6 +358,9 @@ class Buff(foodmachinebroke):
                          buff="none",
                          debuff="frozen",
                          level=1)
+        
+class ThunWeapon(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Thunder Weapon",
                          value=0,
                          desc="coat your weapon with lighting.",
@@ -303,7 +372,8 @@ class Buff(foodmachinebroke):
                          buff="none",
                          debuff="shock",
                          level=1)
-class Debuff(foodmachinebroke):
+        
+class Examine(foodmachinebroke):
     def __init__(self):
         super().__init__(name="Examine",
                          value=0,
@@ -316,6 +386,9 @@ class Debuff(foodmachinebroke):
                          buff="none",
                          debuff="show weakness",
                          level=1)
+        
+class Cripple(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Cripple",
                          value=500,
                          desc="Lowers an enemy's attack.",
@@ -327,6 +400,9 @@ class Debuff(foodmachinebroke):
                          buff="none",
                          debuff="atk-",
                          level=1)
+        
+class Pierce(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Pierce",
                          value=0,
                          desc="Lowers an enemy's defense.",
@@ -338,6 +414,9 @@ class Debuff(foodmachinebroke):
                          buff="none",
                          debuff="pdef-",
                          level=1)
+        
+class MentProbe(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Mental Probe",
                          value=0,
                          desc="Lowers an enemy's magical resistance.",
@@ -349,6 +428,9 @@ class Debuff(foodmachinebroke):
                          buff="none",
                          debuff="mdef-",
                          level=1)
+        
+class Entangle(foodmachinebroke):
+    def __init__(self):        
         super().__init__(name="Entangle",
                          value=0,
                          desc="Lowers an enemy's agility",
