@@ -15,3 +15,14 @@ enemy = { //have yet to add drops for enemies.
           "Evil White Rabbit":   (150, 20, 15, 5, 5, 15, 10, 50, ),
           "Ex-Girlfriend":       (4000, 1000, 50, 10, 10, 15, 10, 15, ),
           }
+
+class Enemy:
+          def __init__(self, name, gold, desc, hp, mana, armor, attack, mres, strength, agl, drops):
+                    self.name = name
+                    self.gold = gold
+                    
+                    
+class Orcha(Enemy):
+          def __init__(self):
+                    super().__init__(name="Orcha",
+                                    )
