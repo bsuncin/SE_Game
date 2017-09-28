@@ -1,0 +1,3 @@
+import Inventory
+
+class Shop:
