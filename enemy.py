@@ -1,5 +1,4 @@
-enemy = { "Name":(health, gold, att, armor, MR, Str, inte, agl, Drops),
-          
+enemy = { //have yet to add drops for enemies.
           "Skeleton":            (100, 5, 10, 0, 0, 5, 2, 8, ),
           "Armored Skeleton":    (100, 10, 15, 10, 5, 5, 2, 4, ),
           "Zombie":              (150, 15, 15, 5, 5, 6, 3, 4, ),
