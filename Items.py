@@ -197,7 +197,7 @@ class ManaPotion(Potion):
                          buff="none",
                          debuff="none")    
         
-class HealthPotion(Potion):
+class GreaterHealthPotion(Potion):
     def __init__(self):
         super().__init__(name="Greater HP Potion",
                          value=200,
@@ -207,7 +207,7 @@ class HealthPotion(Potion):
                          buff="none",
                          debuff="none")
         
-class ManaPotion(Potion):
+class GreaterManaPotion(Potion):
     def __init__(self):
         super().__init__(name="Greater Mana Potion",
                          value=200,
@@ -231,4 +231,16 @@ class SkellyEye(Item):
     def __init__(self):
         super().__init__(name="Skelly Eye",
                          value=2000,
-                         desc="How did you even aquire this?")                   
+                         desc="How did you even aquire this?")   
+        
+        
+        
+ ###Item interface#################################################################################
+
+items = {'fang' : Fang(),
+        'skellyEye' : SkellyEye(),
+         'hpPotion' : HealthPotion(),
+         'manaPotion' : ManaPotion(),
+         'greaterHealthPotion' : GreaterHealthPotion(),
+         
+        }
