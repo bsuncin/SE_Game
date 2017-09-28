@@ -11,11 +11,6 @@ class Inventory:
         self.tickets = 0
         self.tokens = 0
         self.inventory = {}
-        
-# getGold() will return the gold amount the user has.        
-
-    def getGold(self):
-        return self.gold
     
 # addGold(num) will add num to the amount of gold the user has.    
 
@@ -26,12 +21,7 @@ class Inventory:
 
     def removeGold(self, num):
         if num <= self.gold:
-            self.gold -= num
-            
-# getTokens() will return the token amount the user has.        
-
-    def getTokens(self):
-        return self.tokens    
+            self.gold -= num    
     
 # addTokens(num) will add num to the amount of tokens the user has.    
 
@@ -43,12 +33,6 @@ class Inventory:
     def removeTokens(self, num):
         if num <= self.tokens:
             self.tokens -= num
-            
-            
-# getTickets() will return the ticket amount the user has.        
-
-    def getTickets(self):
-        return self.tickets   
     
 # addTickets(num) will add num to the amount of tickets the user has.    
 
