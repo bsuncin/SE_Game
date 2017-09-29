@@ -34,7 +34,7 @@ class Skeleton(Enemy):
           def __init__(self):
                     super().__init__(name ="Skeleton",
                                     gold = 5,
-                                    decs = "An undead Skeleton",
+                                    decs = "An undead Skeleton, doot doot",
                                     hp = 100,
                                     mana = 200,
                                     attack = 10,
@@ -49,7 +49,7 @@ class ArmorSkeleton(Enemy):
           def __init__(self):
                     super().__init__(name ="Armor Skeleton",
                                     gold = 10,
-                                    decs = "Spooky armored Skeleton",
+                                    decs = "Spooky armored Skeleton, major doot doot",
                                     hp = 2000,
                                     mana = 1000,
                                     attack = 75,
