@@ -7,7 +7,7 @@ class Skill:
         self.desc = desc
 
 class foodmachinebroke(Skill):        
-    def __init_(self, name, value, desc, hcost, mcost, damage, dtype, aoe, buff, debuff, level):
+    def __init_(self, name, value, desc, hcost, mcost, damage, dtype, aoe, buff, debuff, level, exp):
         self.hcost = hcost
         self.mcost = mcost
         self.damage = damage
@@ -16,6 +16,7 @@ class foodmachinebroke(Skill):
         self.buff = buff
         self.debuff = debuff
         self.level = level
+        self.exp = exp
         super().__init__(name, value, desc)
 
     def __show__(self):
@@ -30,6 +31,7 @@ class foodmachinebroke(Skill):
         print("Buffs =", self.buff)
         print("Debuffs =", self.debuff)
         print("Level =", self.level)
+        print("Experience =", self.exp)
 
 # Attack Skills ##########################################################
 
@@ -46,7 +48,8 @@ class Fire(foodmachinebroke):
                          aoe = "maybe",
                          buff="none",
                          debuff="on fire",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Ice(foodmachinebroke):
     def __init__(self):        
@@ -60,7 +63,8 @@ class Ice(foodmachinebroke):
                          aoe="maybe",
                          buff="none",
                          debuff="frozen",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Thunder(foodmachinebroke):
     def __init__(self):        
@@ -74,7 +78,8 @@ class Thunder(foodmachinebroke):
                          aoe="maybe",
                          buff="none",
                          debuff="shock",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Inferno(foodmachinebroke):
     def __init__(self):        
@@ -88,7 +93,8 @@ class Inferno(foodmachinebroke):
                          aoe="yes",
                          buff="none",
                          debuff="on fire",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Blizzard(foodmachinebroke):
     def __init__(self):        
@@ -102,7 +108,8 @@ class Blizzard(foodmachinebroke):
                          aoe="yes",
                          buff="none",
                          debuff="frozen",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Tempest(foodmachinebroke):
     def __init__(self):        
@@ -116,7 +123,8 @@ class Tempest(foodmachinebroke):
                          aoe="yes",
                          buff="none",
                          debuff="shock",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Explosion(foodmachinebroke):
     def __init__(self):        
@@ -130,7 +138,8 @@ class Explosion(foodmachinebroke):
                          aoe="maybe",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Obliterate(foodmachinebroke):
     def __init__(self):        
@@ -144,7 +153,8 @@ class Obliterate(foodmachinebroke):
                          aoe="maybe",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class HeavySwing(foodmachinebroke):
     def __init__(self):        
@@ -158,7 +168,8 @@ class HeavySwing(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
        
         # No Health Cost if wearing a helmet/armor rating is above a certain amount
         
@@ -174,7 +185,8 @@ class Headbutt(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Cleave(foodmachinebroke):
     def __init__(self):        
@@ -188,7 +200,8 @@ class Cleave(foodmachinebroke):
                          aoe="yes",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class LasStrike(foodmachinebroke):
     def __init__(self):        
@@ -202,7 +215,8 @@ class LasStrike(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="bleeding",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class LastGamble(foodmachinebroke):
     def __init__(self):        
@@ -216,7 +230,8 @@ class LastGamble(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
         
 class Heal(foodmachinebroke):
@@ -231,7 +246,8 @@ class Heal(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class GreatHeal(foodmachinebroke):
     def __init__(self):        
@@ -245,7 +261,8 @@ class GreatHeal(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Concentration(foodmachinebroke):
     def __init__(self):        
@@ -259,7 +276,8 @@ class Concentration(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Clarity(foodmachinebroke):
     def __init__(self):        
@@ -273,7 +291,8 @@ class Clarity(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Rage(foodmachinebroke):
     def __init__(self):        
@@ -287,7 +306,8 @@ class Rage(foodmachinebroke):
                          aoe="no",
                          buff="atk+",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Fortify(foodmachinebroke):
     def __init__(self):        
@@ -301,7 +321,8 @@ class Fortify(foodmachinebroke):
                          aoe="no",
                          buff="pdef+",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Meditate(foodmachinebroke):
     def __init__(self):        
@@ -315,7 +336,8 @@ class Meditate(foodmachinebroke):
                          aoe="no",
                          buff="mdef+",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Stretch(foodmachinebroke):
     def __init__(self):        
@@ -329,7 +351,8 @@ class Stretch(foodmachinebroke):
                          aoe="no",
                          buff="agl+",
                          debuff="none",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class FireWeapon(foodmachinebroke):
     def __init__(self):        
@@ -343,7 +366,8 @@ class FireWeapon(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="on fire",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class IceWeapon(foodmachinebroke):
     def __init__(self):        
@@ -357,7 +381,8 @@ class IceWeapon(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="frozen",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class ThunWeapon(foodmachinebroke):
     def __init__(self):        
@@ -371,7 +396,8 @@ class ThunWeapon(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="shock",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Examine(foodmachinebroke):
     def __init__(self):
@@ -385,7 +411,8 @@ class Examine(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="show weakness",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Cripple(foodmachinebroke):
     def __init__(self):        
@@ -399,7 +426,8 @@ class Cripple(foodmachinebroke):
                          aoe="maybe",
                          buff="none",
                          debuff="atk-",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Pierce(foodmachinebroke):
     def __init__(self):        
@@ -413,7 +441,8 @@ class Pierce(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="pdef-",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class MentProbe(foodmachinebroke):
     def __init__(self):        
@@ -427,7 +456,8 @@ class MentProbe(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="mdef-",
-                         level=1)
+                         level=1,
+                         exp=0)
         
 class Entangle(foodmachinebroke):
     def __init__(self):        
@@ -441,7 +471,8 @@ class Entangle(foodmachinebroke):
                          aoe="no",
                          buff="none",
                          debuff="sgl-",
-                         level=1)
+                         level=1,
+                         exp=0)
 
 
         
