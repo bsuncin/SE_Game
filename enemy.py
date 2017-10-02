@@ -347,8 +347,37 @@ class SludgeMonster(Enemy):
                                     agl = 5,
                                     drop = [("healthPotion", 1 , 1),("manaPotion", 1 ,1)]
                                     ) 
-
-                                            
+                    
+class LazerShark(Enemy):
+          def __init__(self):
+                    super().__init__(name ="Lazer Shark",
+                                    gold = 300,
+                                    decs = "A shark WIF LAZERS BROOOOO",
+                                    hp = 400,
+                                    mana = 500,
+                                    attack = 35,
+                                    armor = 15,
+                                    mres = 20,
+                                    strength = 20,
+                                    agl = 5,
+                                    drop = [("healthPotion", 1 , 1),("manaPotion", 1 ,1)]
+                                    ) 
+    
+class Godzilla(Enemy):
+          def __init__(self):
+                    super().__init__(name ="Godzilla",
+                                    gold = 500,
+                                    decs = "A big ball of slimmy trash that throws parts of itself at you",
+                                    hp = 700,
+                                    mana = 1000,
+                                    attack = 45,
+                                    armor = 20,
+                                    mres = 20,
+                                    strength = 30,
+                                    agl = 10,
+                                    drop = [("healthPotion", 1 , 1),("manaPotion", 1 ,1)]
+                                    ) 
+                    
                                             
 enemy = { 'Skeleton'            : Skeleton(),               
           'Armored Skeleton'    : ArmoredSkeleton(),       
@@ -366,11 +395,13 @@ enemy = { 'Skeleton'            : Skeleton(),
           'Evil White Rabbit'   : EvilWhiteRabbit(),       
           'Ex-Girlfriend'       : ExGirlfriend(),
           'Wolf'                : Wolf(),
-          'AlphaWolf'           : AlphaWolf(),
+          'Alpha Wolf'          : AlphaWolf(),
           'House Cat'           : HouseCat(),
           'Bat'                 : Bat(),
           'Land Dolphin'        : LandDolphin(),
-          'Sludge Monster'      : SlugeMonster()
+          'Sludge Monster'      : SlugeMonster(),
+          'Lazer Shark'         : LazerShark(),
+          'Godzilla'            : Godzilla()
         }
                                            
                                            
