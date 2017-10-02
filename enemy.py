@@ -163,7 +163,7 @@ class FlemSpitter(Enemy):
                                     strength = 5,
                                     agl = 20,
                                     drops=[("fang", 5, 2),("healthPotion", 3, 1),("manaPotion", 2, 1)
-                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth, 1, 1)] 
+                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth", 1, 1)] 
                                     )                       
 class Velociraptor(Enemy):
           def __init__(self):
@@ -178,7 +178,7 @@ class Velociraptor(Enemy):
                                     strength = 15,
                                     agl = 20,
                                     drops=[("fang", 5, 2),("healthPotion", 3, 1),("manaPotion", 2, 1)
-                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth, 1, 1)] 
+                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth", 1, 1)] 
                                     )
                                            
 class TheCage(Enemy):
@@ -194,7 +194,7 @@ class TheCage(Enemy):
                                     strength = 20,
                                     agl = 30,
                                     drops=[("fang", 5, 2),("healthPotion", 3, 1),("manaPotion", 2, 1)
-                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth, 1, 1)] 
+                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth", 1, 1)] 
                                     )                                           
                                            
 class Dragon(Enemy):
@@ -210,7 +210,7 @@ class Dragon(Enemy):
                                     strength = 25,
                                     agl = 20,
                                     drops=[("GreaterHealthPotion", 3, 3),("GreaterManaPotion", 2, 3)
-                                          ("platemail", 4, 1), ("ringOfHealth, 1, 1)] 
+                                          ("platemail", 4, 1), ("ringOfHealth", 1, 1)] 
                                     )                                           
                                            
 class EvilWhiteRabbit(Enemy):
@@ -226,7 +226,7 @@ class EvilWhiteRabbit(Enemy):
                                     strength = 15,
                                     agl = 50,
                                     drops=[("fang", 5, 2),("healthPotion", 3, 1),("manaPotion", 2, 1)
-                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth, 1, 1)] 
+                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth", 1, 1)] 
                                     )                                           
                                            
 class ExGirlfriend(Enemy):
@@ -242,7 +242,7 @@ class ExGirlfriend(Enemy):
                                     strength = 15,
                                     agl = 15,
                                     drops=[("fang", 5, 2),("healthPotion", 3, 1),("manaPotion", 2, 1)
-                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth, 1, 1)] 
+                                          ("Chainmail", 4, 1),("Leather", 5, 1), ("ringOfHealth", 1, 1)] 
                                     )                                           
 class Wolf(Enemy):
           def __init__(self):
@@ -256,7 +256,7 @@ class Wolf(Enemy):
                                     mres = 5,
                                     strength = 10,
                                     agl = 15,
-                                    drops= [("fang", 4, 2),("healthPotion",3 , 1),("manaPotion, 3,1)]
+                                    drops= [("fang", 4, 2),("healthPotion",3 , 1),("manaPotion", 3,1)]
                                     ) 
 
 class AlphaWolf(Enemy):
@@ -271,7 +271,7 @@ class AlphaWolf(Enemy):
                                     mres = 10,
                                     strength = 20,
                                     agl = 20,
-                                    drops= [("fang", 4, 2),("healthPotion",3 , 1),("manaPotion, 3,1)]
+                                    drops= [("fang", 4, 2),("healthPotion",3 , 1),("manaPotion", 3,1)]
                                     ) 
                                             
 class HouseCat(Enemy):
@@ -286,7 +286,7 @@ class HouseCat(Enemy):
                                     mres = 5,
                                     strength = 5,
                                     agl = 20,
-                                    drop = [("healthPotion", ... , 1),("manaPotion, ... ,1)]
+                                    drop = [("healthPotion", 1, 1),("manaPotion", 1 ,1)]
                                     )
 
 class Bat(Enemy):
@@ -301,7 +301,7 @@ class Bat(Enemy):
                                     mres = 5,
                                     strength = 10,
                                     agl = 15,
-                                    drop = [("healthPotion", ... , 1),("manaPotion, ... ,1)]
+                                    drop = [("healthPotion", 1 , 1),("manaPotion", 1 ,1)]
                                     )
 class LandDolphin(Enemy):
           def __init__(self):
@@ -315,7 +315,7 @@ class LandDolphin(Enemy):
                                     mres = 10,
                                     strength = 15,
                                     agl = 5,
-                                    drop = [("healthPotion", ... , 1),("manaPotion, ... ,1)]
+                                    drop = [("healthPotion", 1, 1),("manaPotion", 1 ,1)]
                                     ) 
    
 class Llamas(Enemy):
@@ -330,7 +330,7 @@ class Llamas(Enemy):
                                     mres = 10,
                                     strength = 15,
                                     agl = 10,
-                                    drop = [("healthPotion", ... , 1),("manaPotion, ... ,1)]
+                                    drop = [("healthPotion", 1 , 1),("manaPotion", 1 ,1)]
                                     ) 
 
 class SludgeMonster(Enemy):
@@ -345,7 +345,7 @@ class SludgeMonster(Enemy):
                                     mres = 20,
                                     strength = 20,
                                     agl = 5,
-                                    drop = [("healthPotion", ... , 1),("manaPotion, ... ,1)]
+                                    drop = [("healthPotion", 1 , 1),("manaPotion", 1 ,1)]
                                     ) 
 
                                             
