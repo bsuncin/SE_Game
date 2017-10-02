@@ -111,7 +111,19 @@ class Club(Weapon):
                          style="blunt",
                          hands=1,
                          buff="none",
-                         debuff="none")        
+                         debuff="none")  
+        
+class BrokenStick(Weapon):
+    def __init__(self):
+        super().__init__(name="Broken Stick",
+                         value=200,
+                         desc="A stick you found wandering the woods.",
+                         damage=5,
+                         dtype="magic",
+                         style="fire",
+                         hands=1,
+                         buff="none",
+                         debuff="none")          
    
 #Armor Items##############################################################################
 
@@ -149,7 +161,20 @@ class Chainmail(Armor):
                          dtype="physical",
                          stype=["slash"],
                          buff="none",
-                         debuff="slow")        
+                         debuff="slow")     
+        
+class TatteredRobes(Armor):
+    def __init__(self):
+        super().__init__(name="Tattered Robes",
+                         value=800,
+                         desc="Your old robes you've kept around since your College days.",
+                         defence=5,
+                         weight="light",
+                         dtype="physical",
+                         stype=["none"],
+                         buff="none",
+                         debuff="slow")     
+        
 
 #Ring Items#####################################################################
 
@@ -231,7 +256,19 @@ class SkellyEye(Item):
     def __init__(self):
         super().__init__(name="Skelly Eye",
                          value=2000,
-                         desc="How did you even aquire this?")   
+                         desc="How did you even aquire this?")
+        
+class StrandOfBlueHair(Item):
+    def __init__(self):
+        super().__init__(name="Strand of Blue Hair",
+                         value=2000,
+                         desc="A lock of blue hair plucked from the scalp of the Blue Haired Vampire.")
+        
+class GoldNug(Item):
+    def __init__(self):
+        super().__init__(name="Gold Nug",
+                         value=2000,
+                         desc="A generously sized clump of gold, Holds high value on the market.")        
         
         
         
@@ -251,4 +288,8 @@ items = {'fang' : Fang(),
          'club' : Club(),
          'dagger' : Dagger(),
          'sword' : Sword(),
+         'brokenStick' : BrokenStick(),
+         'tatteredRobes' : TatteredRobes(),
+         'strandOfBlueHair' : StrandOfBlueHair(),
+         'goldNug' : GoldNug(),
         }
