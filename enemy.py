@@ -125,7 +125,7 @@ class KingOrcha(Enemy):
           def __init__(self):
                     super().__init__(name ="King Orcha",
                                     gold = 400,
-                                    decs = "",
+                                    decs = "If a Orc and an Orca had a child dis be it ",
                                     hp = 2000,
                                     mana = 1000,
                                     attack = 75,
