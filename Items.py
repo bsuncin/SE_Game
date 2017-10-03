@@ -46,7 +46,7 @@ class Armor(Item):
         print("Name =", self.name)
         print("Value =", self.value)
         print("Description =", self.desc)
-        print("Wieght =", self.wieght)
+        print("Weight =", self.weight)
         print("Damage Type =", self.dtype)
         print("Damage Style =", self.stype)
         print("buff =", self.buff)
