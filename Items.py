@@ -307,3 +307,10 @@ items = {'Fang' : Fang(),
          'Strand of Blue Hair' : StrandOfBlueHair(),
          'Gold Nug' : GoldNug(),
         }
+
+####Test defs##########################################################################################
+
+def showAll():
+    for x in items:
+        items[x].__show__()
+        print()
