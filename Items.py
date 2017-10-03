@@ -60,6 +60,11 @@ class Ring(Item):
         print("Name =", self.name)
         print("Value =", self.value)
         print("Description =", self.desc)
+        print("Defence =", self.defence)
+        print("Health =", self.hp)
+        print("Mana =", self.mana)
+        print("Buff =", self.buff)
+        print("Debuff =", self.debuff)
 
 class Potion(Item):
     def __init__(self, name, value, desc, hp, mana, buff, debuff):
@@ -73,6 +78,10 @@ class Potion(Item):
         print("Name =", self.name)
         print("Value =", self.value)
         print("Description =", self.desc)
+        print("Health =", self.hp)
+        print("Mana =", self.mana)
+        print("Buff =", self.buff)
+        print("Debuff =", self.debuff)
 
 
 # Weapon items ###########################################################################
@@ -204,7 +213,7 @@ class RingOfMana(Ring):
 
 class HealthPotion(Potion):
     def __init__(self):
-        super().__init__(name="HP Potion",
+        super().__init__(name="Health Potion",
                          value=200,
                          desc="A potion that will recover 50 health.",
                          hp=50,
@@ -224,7 +233,7 @@ class ManaPotion(Potion):
         
 class GreaterHealthPotion(Potion):
     def __init__(self):
-        super().__init__(name="Greater HP Potion",
+        super().__init__(name="Greater Health Potion",
                          value=200,
                          desc="A potion that will recover 150 health.",
                          hp=150,
@@ -274,22 +283,22 @@ class GoldNug(Item):
         
  ###Item interface#################################################################################
 
-items = {'fang' : Fang(),
-        'skellyEye' : SkellyEye(),
-         'hpPotion' : HealthPotion(),
-         'manaPotion' : ManaPotion(),
-         'greaterHealthPotion' : GreaterHealthPotion(),
-         'greaterManaPotion' : GreaterManaPotion(),
-         'ringOfHeath' : RingOfHeath(),
-         'ringOfMana' : RingOfMana(),
-         'chainmail' : Chainmail(),
-         'leather' : Leather(),
-         'platemail' : Platemail(),
-         'club' : Club(),
-         'dagger' : Dagger(),
-         'sword' : Sword(),
-         'brokenStick' : BrokenStick(),
-         'tatteredRobes' : TatteredRobes(),
-         'strandOfBlueHair' : StrandOfBlueHair(),
-         'goldNug' : GoldNug(),
+items = {'Fang' : Fang(),
+         'Skelly Eye' : SkellyEye(),
+         'Health Potion' : HealthPotion(),
+         'Mana Potion' : ManaPotion(),
+         'Greater Health Potion' : GreaterHealthPotion(),
+         'Greater Mana Potion' : GreaterManaPotion(),
+         'Ring of Health' : RingOfHealth(),
+         'Ring of Mana' : RingOfMana(),
+         'Chainmail' : Chainmail(),
+         'Leather' : Leather(),
+         'Platemail' : Platemail(),
+         'Club' : Club(),
+         'Dagger' : Dagger(),
+         'Sword' : Sword(),
+         'Broken Stick' : BrokenStick(),
+         'Tattered Robes' : TatteredRobes(),
+         'Strand of Blue Hair' : StrandOfBlueHair(),
+         'Gold Nug' : GoldNug(),
         }
