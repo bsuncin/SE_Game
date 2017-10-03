@@ -28,9 +28,9 @@ class Weapon(Item):
         print("Debuffs=", self.debuff)
 
 class Armor(Item):
-    def __init__(self, name, value, desc, defence, wieght, dtype, stype, buff, debuff):
+    def __init__(self, name, value, desc, defence, weight, dtype, stype, buff, debuff):
         self.defence = defence
-        self.wieght = wieght
+        self.weight = weight
         self.dtype = dtype
         self.stype = stype
         self.buff = buff
