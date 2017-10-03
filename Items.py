@@ -5,6 +5,11 @@ class Item:
         self.name = name
         self.value = value
         self.desc = desc
+        
+    def __show__(self):
+        print("Name =", self.name)
+        print("Value =", self.value)
+        print("Description =", self.desc)
 
 class Weapon(Item):
     def __init__(self, name, value, desc, damage, dtype, style, hands, buff, debuff):
