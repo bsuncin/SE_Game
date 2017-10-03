@@ -63,6 +63,9 @@ class Inventory:
     def addItem(self, item, num):
         if item in self.inventory:
             self.inventory[item][1] += num
+            
+            if self.inventory[item][1] > 99:
+                self.inventory[item][1] = 99
             return 0
         return -1
             
