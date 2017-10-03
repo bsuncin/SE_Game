@@ -13,7 +13,7 @@ class Inventory:
         self.inventory = {}
         
         for x in I.items:
-            self.inventory[x] = (I.items[x], 0)
+            self.inventory[x] = [I.items[x], 0]
     
 # addGold(num) will add num to the amount of gold the user has.    
 
@@ -21,13 +21,13 @@ class Inventory:
         self.gold += num
         
 # removeGold(num) will remove amount num from the gold the user has.
-# If the user has enough gold returns 0, else returns 1.
+# If the user has enough gold returns 0, else returns -1.
 
     def removeGold(self, num):
         if num <= self.gold:
             self.gold -= num
             return 0
-        return 1
+        return -1
     
 # addTokens(num) will add num to the amount of tokens the user has.    
 
@@ -35,13 +35,13 @@ class Inventory:
         self.tokens += num        
         
 # removeTokens(num) will remove amount num from the tokens the user has.
-# If the user has enough tokens returns 0, else returns 1.
+# If the user has enough tokens returns 0, else returns -1.
 
     def removeTokens(self, num):
         if num <= self.tokens:
             self.tokens -= num
             return 0
-        return 1
+        return -1
     
 # addTickets(num) will add num to the amount of tickets the user has.    
 
@@ -49,16 +49,16 @@ class Inventory:
         self.tickets += num    
         
 # removeTickets(num) will remove amount num from the tickets the user has.
-# If the user has enough tickets returns 0, else returns 1.
+# If the user has enough tickets returns 0, else returns -1.
 
     def removeTickets(self, num):
         if num <= self.tickets:
             self.tickets -= num            
             return 0
-        return 1
+        return -1
     
 # addItem(item, num) will add an amount num of item item from the items data 
-# if it exists. If an error occurs returns 1, else returns 0.            
+# if it exists. If an error occurs returns -1, else returns 0.            
 
     def addItem(self, item, num):
         if item in self.inventory:
@@ -87,12 +87,12 @@ class Inventory:
         return -1;
     
 # getItem(item) will return the item item from the inventory.
-# Returns 1 if it encounters an error.
+# Returns -1 if it encounters an error.
 
     def getItem(self, item):
         if item in self.inventory:
             return self.inventory[item][0]
-        return 1
+        return -1
     
 # getInventory() will return an array of the current inventory only 
 # including items with an amount above 0.
