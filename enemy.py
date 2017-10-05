@@ -409,7 +409,13 @@ enemies = { 'Skeleton'          : Skeleton(),
           'Lazer Shark'         : LazerShark(),
           'Gerdzilla'           : Gerdzilla()
         }
-                                           
+
+enemyGroups = { 'Group of Skellies' : ['Skeleton', 'Skeleton', 'Skeleton'],
+               'Boss1' : ['Ex-Girlfriend'],
+               'Vamp Bitches' : ['Blue Haired Vampire', 'Blue Haired Vampire', 'Blue Haired Vampire'],
+               'Wolf Pack' : ['Wolf', 'Wolf', 'Wolf'],
+               'De Bats' : ['Bat', 'Bat', 'Bat']
+               }
                                            
                                            
                                            
