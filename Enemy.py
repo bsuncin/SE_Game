@@ -410,11 +410,24 @@ enemies = { 'Skeleton'          : Skeleton(),
           'Gerdzilla'           : Gerdzilla()
         }
 
-enemyGroups = { 'Group of Skellies' : ['Skeleton', 'Skeleton', 'Skeleton'],
-               'Boss1' : ['Ex-Girlfriend'],
-               'Vamp Bitches' : ['Blue Haired Vampire', 'Blue Haired Vampire', 'Blue Haired Vampire'],
-               'Wolf Pack' : ['Wolf', 'Wolf', 'Wolf'],
-               'De Bats' : ['Bat', 'Bat', 'Bat']
+enemyGroups = { 'Skellies' :            ['Skeleton', 'Skeleton', 'Skeleton'],
+               'Hard Skellies' :        ['Armored Skeleton', 'Skeleton', 'Skeleton'],
+               'Boss 1' :               ['Lord Pepe'],
+               'Vamp Bitches' :         ['Blue Haired Vampire', 'Vampire Acolyte', 'Vampire Acolyte'],
+               'Wolf Pack' :            ['Wolf', 'Wolf', 'Wolf'],
+               'Aplha Pack' :           ['Alpha Wolf', 'Wolf', 'Wolf'],
+               'Full Alpha' :           ['Alpha Wolf', 'Alpha Wolf', 'Alpha Wolf'],
+               'De Bats' :              ['Bat', 'Bat', 'Bat'],
+               'Undead Group' :         ['Skeleton', 'Zombie', 'Zombie'],
+               'Spider Group' :         ['Giant Spider','Giant Spider','Giant Spider'],
+               'Cage Match' :           ['Velociraptor', 'The Cage', 'Velociraptor'],
+               'Boss 2' :               ['Dragon'],
+               'Cute Group' :           ['House Cat', 'Evil White Rabbit', 'House Cat'],
+               'Aqua Group' :           ['Lazer Shark', 'Land Dolphin', 'Land Dolphin'],
+               'Garbage Group' :        ['Sludge Monster','Sludge Monster','Sludge Monster'],
+               'Dino Group' :           ['Gerdzilla', 'Velociraptor', 'Velociraptor'],
+               'Orcha Squad' :          ['King Orcha', 'Orcha Minion', 'Orcha Minion', 'Orcha Minion', 'Orcha Minion'],
+               'Boss 3' :               ['Ex-Girlfriend']
                }
                                            
                                            
