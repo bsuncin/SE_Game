@@ -46,7 +46,7 @@ class Zombie(Enemy):
           def __init__(self):
                     super().__init__(name ="Zombie",
                                     gold = 15,
-                                    decs = "Undead Hooman",
+                                    decs = "Undead Humans that crave brains, youre safe though",
                                     hp = 150,
                                     mana = 200,
                                     attack = 15,
@@ -169,7 +169,7 @@ class Velociraptor(Enemy):
           def __init__(self):
                     super().__init__(name ="Velociraptor",
                                     gold = 40,
-                                    decs = "is a clever girl",
+                                    decs = "is clever girl",
                                     hp = 300,
                                     mana = 500,
                                     attack = 30,
@@ -185,7 +185,7 @@ class TheCage(Enemy):
           def __init__(self):
                     super().__init__(name ="Nickolas 'The Cage' Cage",
                                     gold = 100,
-                                    decs = "is a clever girl",
+                                    decs = "THE CAGE NEEDS NO INTRODUCTION",
                                     hp = 500,
                                     mana = 1000,
                                     attack = 30,
