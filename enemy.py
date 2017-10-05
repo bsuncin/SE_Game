@@ -363,11 +363,11 @@ class LazerShark(Enemy):
                                     drop = [("healthPotion", 1 , 1),("manaPotion", 1 ,1)]
                                     ) 
     
-class Godzilla(Enemy):
+class Gerdzilla(Enemy):
           def __init__(self):
-                    super().__init__(name ="Godzilla",
+                    super().__init__(name ="Gerdzilla",
                                     gold = 500,
-                                    decs = "A big ball of slimmy trash that throws parts of itself at you",
+                                    decs = "rawr xD",
                                     hp = 700,
                                     mana = 1000,
                                     attack = 45,
@@ -401,7 +401,7 @@ enemy = { 'Skeleton'            : Skeleton(),
           'Land Dolphin'        : LandDolphin(),
           'Sludge Monster'      : SlugeMonster(),
           'Lazer Shark'         : LazerShark(),
-          'Godzilla'            : Godzilla()
+          'Gerdzilla'           : Gerdzilla()
         }
                                            
                                            
