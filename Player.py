@@ -1,4 +1,6 @@
-#import Inventory as I
+import Inventory as I
+import Skills as S
+from math import log
 
 # Class stores all information about the player character.
 # tracks the player state and relevant values for progression
@@ -7,75 +9,67 @@ class Player:
 
     def __init__ (self):
         self.health = 100
+        self.maxHealth
         self.mana = 100
+        self.maxMana = 100
         self.strength = 20
         self.damres = 0
         self.agility = 20
-        self.healthcapacity = 100
         self.armor = (False, null)
         self.firstfinger  = (False, null)
         self.secondfinger = (False, null)
         self.firsthand = (False, null)
         self.secondhand = (False, null)
-        self.skills = {}
+        self.skills = S.pSkills
         self.xp = 0
         self.level = 1
+        self.inventory = I.Inventory()
         
-        self.inventory = None # I.Inventory()
+    def isAlive(self):
+        return self.health > 0
 
+#max health
 
-    #max health
-
-    def addHealthCap(self, num):
-        self.healthcapacity += num
-
-    def removeHealthCap(self, num):
-        self.healthcapacity -= num
+    def checkMaxHealth(self):
+        if self.health > self.maxHealth:
+            self.health = self.maxHealth
 
 # addHealth() will add num to the health of the user.
     
     def addHealth(self, num):
-        if num <= self.health and num <= self.healthcapacity:
-            self.health += num
+        self.health += num
+        checkMaxHealth()
             
 # removeHealth() will remove amount num from the health of the user.
             
     def removeHealth(self, num):
-        if num <= self.mana and num <= self.healthcapacity:
-            self.mana -= num
+        self.health -= num
+        return isAlive()
+    
+    def checkMaxMana(self):
+        if self.mana > self.maxMana:
+            self.mana = self.maxMana
 
 # addMana() will add num to the mana of the user.
 
     def addMana(self, num):
         self.mana += num
+        checkMaxMana()
 
 # removeMana() will remove amount num from the mana of the user.
 
     def removeMana(self, num):
-        if num <= self.mana:
-            self.mana -= num
+        self.mana -= num
 
 # addStrength() will add num to the strength of the user.
 
     def addStrength(self, num):
         self.strength += num
 
-# removeStrength() will remove num from the strength of the user.
-
-    def removeStrength(self, num):
-        if num <= self.strength:
-            self.strength -= num
-
 # addAgility() will add num to the agility of the user.
 
     def addAgility(self, num):
         self.agility += num
-
-# removeAgility() will remove num from the agility of the user.
-
-    def removeAgility(self, num):
-        if num <= self.agility:
-            self.agility -= num
             
 # equip() will equip either armor, ring, or weapon on the user.
 
@@ -118,31 +112,12 @@ class Player:
 
 # getLevel() will convert xp points accrued to a level ranking.
 
-    def getLevel(self):
-        xpState = self.xp
-        levelState = self.level
-        if   xpState <= 25:
-             levelState = 1
-        elif xpState <= 50:
-             levelState = 2
-        # addAgility(x)
-        elif xpState <= 75:
-             levelState = 3
-        elif xpState <= 100:
-             levelState = 4
-        elif xpState <= 125:
-             levelState = 5
-        elif xpState <= 150:
-             levelState = 6
-        elif xpState <= 175:
-             levelState = 7
-        elif xpState <= 200:
-             levelState = 8
-        elif xpState <=225:
-             levelState = 9
-        elif xpState <=250:
-             levelState = 10
-        return self.level 
+    def checkLevelUp(self):
+        if self.xp == 0:
+            return false
+        else:
+            if self.level < 
+            
         
     
 
