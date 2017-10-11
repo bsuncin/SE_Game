@@ -116,7 +116,9 @@ class Player:
         if self.xp == 0:
             return false
         else:
-            if self.level < 
+            if self.level % 800 == 0:
+                self.level += 1
+                return true
             
         
     
