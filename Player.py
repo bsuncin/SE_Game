@@ -1,6 +1,6 @@
 import Inventory as I
 import Skills as S
-from math import log
+import Classes as C
 
 # Class stores all information about the player character.
 # tracks the player state and relevant values for progression
@@ -21,12 +21,20 @@ class Player:
         self.firsthand = (False, null)
         self.secondhand = (False, null)
         self.skills = S.pSkills
+        self.class = null
         self.xp = 0
         self.level = 1
         self.inventory = I.Inventory()
+        self.classes = {"Mage" : C.Mage(),
+                       "Fighter" : C.Fighter(),
+                       "Tank" : C.Tank(),
+                       "Duelist" : C.Duelist()}
         
     def isAlive(self):
         return self.health > 0
+    
+    def setClass(self, ctype):
+        self.class = ctype
 
 #max health
 
