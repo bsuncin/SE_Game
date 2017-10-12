@@ -1,0 +1,26 @@
+Combat Engine
+Functionality:
+1. Player to Enemy attack
+2. Enemy to player Attack
+3. Priority Queue based on speed for turns
+4. Buff/Debuff System
+5. Giving rewards at the end
+6. Win/lose conditions based on health
+7. return the player object
+
+
+State Tracking
+each section of states should be its own dictionary
+
+Functionality:
+1. Generic states for the main game that would control the world
+2. states for each NPC eg. Greg, Arcade NPC, Inn NPC
+3. Save/load functions - no need to fully define yet
+
+Mini Game Controller
+Functionality:
+1. Call games with their own functions
+2. Games will be imported 
+3. Retreive game Scores
+4. Update high score tables
+5. Create High Score Tables
