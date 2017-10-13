@@ -1,6 +1,6 @@
 # Definitions
 class foodmachinebroke:        
-    def __init_(self, name, value, desc, hcost, mcost, damage, dtype, aoe, buff, debuff, level, exp):
+    def __init__(self, name, value, desc, hcost, mcost, damage, dtype, aoe, buff, debuff, level, exp):
         self.name = name
         self.value = value
         self.desc = desc
@@ -32,7 +32,6 @@ class foodmachinebroke:
 
 class Fire(foodmachinebroke):
     def __init__(self):
-        #spells above a certain level will gain aoe when labled maybe
         super().__init__(name="Fire",
                          value=0,
                          desc="fire bad.",
@@ -84,7 +83,7 @@ class Inferno(foodmachinebroke):
                          hcost=20,
                          mcost=50,
                          damage=100,
-                         dtype="magical"
+                         dtype="magical",
                          aoe="yes",
                          buff="none",
                          debuff="on fire",
@@ -126,9 +125,9 @@ class Explosion(foodmachinebroke):
         super().__init__(name="EXPLOSION",
                          value=0,
                          desc="a blast of cold capable of freezing foes.",
-                         hcost=currenthp-1,
+                         hcost=20,
                          mcost=0,
-                         damage=currenthp-1,
+                         damage=20,
                          dtype="magical",
                          aoe="maybe",
                          buff="none",
@@ -142,8 +141,8 @@ class Obliterate(foodmachinebroke):
                          value=0,
                          desc="a blast of cold capable of freezing foes.",
                          hcost=0,
-                         mcost=currentmana,
-                         damage=currentmana,
+                         mcost=20,
+                         damage=20,
                          dtype="magical",
                          aoe="maybe",
                          buff="none",
@@ -469,5 +468,33 @@ class Entangle(foodmachinebroke):
                          level=1,
                          exp=0)
 
-
-        
+skills = {'Fire' : Fire(),
+          'Ice' : Ice(),
+          'Thunder' : Thunder(),
+          'Inferno' : Inferno(),
+          'Blizzard' : Blizzard(),
+          'Tempest' : Tempest(),
+          'Explosion' : Explosion(),
+          'Obliterate' : Obliterate(),
+          'HeavySwing' : HeavySwing(),
+          'Headbutt' : Headbutt(),
+          'Cleave' : Cleave(),
+          'LasStrike' : LasStrike(),
+          'LastGamble' : LastGamble(),
+          'Heal' : Heal(),
+          'GreatHeal' : GreatHeal(),
+          'Concentration' : Concentration(),
+          'Clarity' : Clarity(),
+          'Rage' : Rage(),
+          'Fortify' : Fortify(),
+          'Meditate' : Meditate(),
+          'Stretch' : Stretch(),
+          'FireWeapon' : FireWeapon(),
+          'IceWeapon' : IceWeapon(),
+          'ThunWeapon' : ThunWeapon(),
+          'Examine' : Examine(),
+          'Cripple' : Cripple(),
+          'Pierce' : Pierce(),
+          'MentProbe' : MentProbe(),
+          'Entangle' : Entangle()
+          }
