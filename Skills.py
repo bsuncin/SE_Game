@@ -1,13 +1,9 @@
 # Definitions
-
-class Skill:
-    def __init__(self, name, value, desc):
+class foodmachinebroke:        
+    def __init_(self, name, value, desc, hcost, mcost, damage, dtype, aoe, buff, debuff, level, exp):
         self.name = name
         self.value = value
         self.desc = desc
-
-class foodmachinebroke(Skill):        
-    def __init_(self, name, value, desc, hcost, mcost, damage, dtype, aoe, buff, debuff, level, exp):
         self.hcost = hcost
         self.mcost = mcost
         self.damage = damage
@@ -17,7 +13,6 @@ class foodmachinebroke(Skill):
         self.debuff = debuff
         self.level = level
         self.exp = exp
-        super().__init__(name, value, desc)
 
     def __show__(self):
         print("Name =", self.name)
