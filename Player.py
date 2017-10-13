@@ -9,19 +9,19 @@ class Player:
 
     def __init__ (self):
         self.health = 100
-        self.maxHealth
+        self.maxHealth = 100
         self.mana = 100
         self.maxMana = 100
         self.strength = 20
         self.damres = 0
         self.agility = 20
-        self.armor = (False, null)
-        self.firstfinger  = (False, null)
-        self.secondfinger = (False, null)
-        self.firsthand = (False, null)
-        self.secondhand = (False, null)
-        self.skills = S.pSkills
-        self.class = null
+        self.armor = (False, None)
+        self.firstfinger  = (False, None)
+        self.secondfinger = (False, None)
+        self.firsthand = (False, None)
+        self.secondhand = (False, None)
+        self.skills = S.skills
+        self.cla = None
         self.xp = 0
         self.level = 1
         self.inventory = I.Inventory()
@@ -29,12 +29,27 @@ class Player:
                        "Fighter" : C.Fighter(),
                        "Tank" : C.Tank(),
                        "Duelist" : C.Duelist()}
+    def __show__(self):
+        print("Health", self.health)
+        print("Mana", self.mana)
+        print("Strength", self.strength)
+        print("Damres", self.damres)
+        print("Agility", self.agility)
+        print("Armor", self.armor)
+        print("Firstfinger", self.firstfinger)
+        print("Secondfinger", self.secondfinger)
+        print("Firsthand", self.firsthand)
+        print("Secondhand", self.secondhand)
+        print("Skills", self.skills)
+        print("Class", self.cla)
+        print("xp", self.xp)
+        print("level", self.level)
         
     def isAlive(self):
         return self.health > 0
     
     def setClass(self, ctype):
-        self.class = ctype
+        self.cla = self.classes[ctype]
 
 #max health
 
@@ -85,33 +100,43 @@ class Player:
 
     def equipArmor(self, item):
             self.armor = (True, item)
+            self.inventory.removeItem(item, 1)
 
     def removeArmor(self, item):
-            self.armor = (False, null)
+            self.armor = (False, None)
+            self.inventory.addItem(item, 1)
 
     def equipRighthand(self, item):
             self.righthand = (True, item)
+            self.inventory.removeItem(item, 1)
 
     def removeRighthand(self, item):
-            self.righthand = (False, null)
+            self.righthand = (False, None)
+            self.inventory.addItem(item, 1)
 
     def equipLefthand(self,item):
             self.lefthand = (True, item)
+            self.inventory.removeItem(item, 1)
 
     def removeLefthand(self, item):
-            self.lefthand = (False, null)
+            self.lefthand = (False, None)
+            self.inventory.addItem(item, 1)
             
     def equipFirstfinger(self, item):
            self.firstfinger = (True, item)
+           self.inventory.removeItem(item, 1)
 
     def removeFirstfinger(self, item):
-           self.firstfinger = (False, null)
+           self.firstfinger = (False, None)
+           self.inventory.addItem(item, 1)
 
     def equipSecondfinger(self, item):
            self.secondfinger = (True, item)
+           self.inventory.removeItem(item, 1)
 
     def removeSecondfinger(self, item):
-           self.secondfinger = (False, null) 
+           self.secondfinger = (False, None)
+           self.inventory.addItem(item, 1)
 
 # addXp() will add amount num to the xp of the user.
 
@@ -128,6 +153,3 @@ class Player:
                 self.level += 1
                 return true
             
-        
-    
-
