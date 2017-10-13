@@ -1,20 +1,22 @@
 class Class:
-    def __init__(self, attack, speed, xp, lvl, damRes, health, mana):
+    def __init__(self, name, attack, speed, xp, lvl, damRes, health, mana):
+        self.name = name
         self.attack = attack
         self.speed = speed
         self.mana = mana
         self.health = health
-        self.damres = damres
+        self.damRes = damRes
         self.xp = xp
         self.lvl = lvl
         
     def __show__(self):
+        print("Name =", self.name)
         print("Attack =", self.attack)
         print("Speed =", self.speed)
         print("Mana =", self.mana)
         print("Health =", self.health)
-        print("DamRes =", self.DamRes)
-        print("XP =", self.XP)
+        print("DamRes =", self.damRes)
+        print("XP =", self.xp)
         print("LVL =", self.lvl)
         
     def checkLVLUp(self):
@@ -39,7 +41,8 @@ class Class:
             
 class Mage(Class):
     def __init__(self):
-        super().__init__(attack = 5, 
+        super().__init__(name = "Mage",
+                         attack = 5, 
                          speed = 2,
                          xp = 0,
                          lvl = 1,
@@ -49,7 +52,8 @@ class Mage(Class):
         
 class Fighter(Class):
     def __init__(self):
-        super().__init__(attack = 10, 
+        super().__init__(name = "Fighter",
+                         attack = 10, 
                          speed = 7,
                          xp = 0,
                          lvl = 1,
@@ -60,7 +64,8 @@ class Fighter(Class):
         
 class Tank(Class):
     def __init__(self):
-        super().__init__(attack = 10, 
+        super().__init__(name = "Tank",
+                         attack = 10, 
                          speed = 2,
                          xp = 0,
                          lvl = 1,
@@ -71,10 +76,11 @@ class Tank(Class):
       
 class Duelist(Class):
     def __init__(self):
-        super().__init__(attack = 5, 
+        super().__init__(name = "Duelist",
+                         attack = 5, 
                          speed = 10,
                          xp = 0,
                          lvl = 1,
                          damRes = 3,
                          health = 5,
-                         mana = 10)    
+                         mana = 10) 
