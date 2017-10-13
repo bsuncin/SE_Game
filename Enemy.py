@@ -22,7 +22,7 @@ class Skeleton(Enemy):
           def __init__(self):
                     super().__init__(name ="Skeleton",
                                     gold = 5,
-                                    decs = "Watch out for the skelly that drinks a lot of milk",
+                                    desc = "Watch out for the skelly that drinks a lot of milk",
                                     hp = 100,
                                     mana = 200,
                                     attack = 10,
@@ -37,7 +37,7 @@ class ArmorSkeleton(Enemy):
           def __init__(self):
                     super().__init__(name ="Armor Skeleton",
                                     gold = 10,
-                                    decs = "Spooky armored Skeleton, major doot doot",
+                                    desc = "Spooky armored Skeleton, major doot doot",
                                     hp = 2000,
                                     mana = 1000,
                                     attack = 75,
@@ -52,7 +52,7 @@ class Zombie(Enemy):
           def __init__(self):
                     super().__init__(name ="Zombie",
                                     gold = 15,
-                                    decs = "Undead Humans that crave brains, youre safe though",
+                                    desc = "Undead Humans that crave brains, youre safe though",
                                     hp = 150,
                                     mana = 200,
                                     attack = 15,
@@ -68,7 +68,7 @@ class GiantSpider(Enemy):
           def __init__(self):
                     super().__init__(name ="Giant Spider",
                                     gold = 25,
-                                    decs = "Dah hell you think it is -_- ",
+                                    desc = "Dah hell you think it is -_- ",
                                     hp = 300,
                                     mana = 500,
                                     attack = 30,
@@ -83,7 +83,7 @@ class VampireAcolyte(Enemy):
           def __init__(self):
                     super().__init__(name ="Vampire Acolyte",
                                     gold = 25,
-                                    decs = "Humans that reaaaally wanna be a true vampy",
+                                    desc = "Humans that reaaaally wanna be a true vampy",
                                     hp = 200,
                                     mana = 500,
                                     attack = 25,
@@ -98,7 +98,7 @@ class BlueHairedVampire(Enemy):
           def __init__(self):
                     super().__init__(name ="Blue Haired Vampire",
                                     gold = 150,
-                                    decs = "The scariest darkest spookiest vampire out there",
+                                    desc = "The scariest darkest spookiest vampire out there",
                                     hp = 1000,
                                     mana = 2000,
                                     attack = 60,
@@ -114,7 +114,7 @@ class LordPepe(Enemy):
           def __init__(self):
                     super().__init__(name ="Lord Pepe",
                                     gold = 200,
-                                    decs = "Lord of all who are antisocial, Slayer of normies and defender of Weebs",
+                                    desc = "Lord of all who are antisocial, Slayer of normies and defender of Weebs",
                                     hp = 800,
                                     mana = 1000,
                                     attack = 65,
@@ -131,7 +131,7 @@ class KingOrcha(Enemy):
           def __init__(self):
                     super().__init__(name ="King Orcha",
                                     gold = 400,
-                                    decs = "If a Orc and an Orca had a child dis be it ",
+                                    desc = "If a Orc and an Orca had a child dis be it ",
                                     hp = 2000,
                                     mana = 1000,
                                     attack = 75,
@@ -146,7 +146,7 @@ class OrchaMinion(Enemy):
           def __init__(self):
                     super().__init__(name ="Orcha Minion",
                                     gold = 3,
-                                    decs = "Penguins, theyre penguins.... ",
+                                    desc = "Penguins, theyre penguins.... ",
                                     hp = 10,
                                     mana = 100,
                                     attack = 2,
@@ -160,7 +160,7 @@ class FlemSpitter(Enemy):
           def __init__(self):
                     super().__init__(name ="Flem Spitter",
                                     gold = 40,
-                                    decs = "Spits some nasty gook on ya",
+                                    desc = "Spits some nasty gook on ya",
                                     hp = 150,
                                     mana = 300,
                                     attack = 30,
@@ -168,14 +168,14 @@ class FlemSpitter(Enemy):
                                     mres = 0,
                                     strength = 5,
                                     agl = 20,
-                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1)
+                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
                                     )                       
 class Velociraptor(Enemy):
           def __init__(self):
                     super().__init__(name ="Velociraptor",
                                     gold = 40,
-                                    decs = "is clever girl",
+                                    desc = "is clever girl",
                                     hp = 300,
                                     mana = 500,
                                     attack = 30,
@@ -183,7 +183,7 @@ class Velociraptor(Enemy):
                                     mres = 10,
                                     strength = 15,
                                     agl = 20,
-                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1)
+                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
                                     )
                                            
@@ -191,7 +191,7 @@ class TheCage(Enemy):
           def __init__(self):
                     super().__init__(name ="Nickolas 'The Cage' Cage",
                                     gold = 100,
-                                    decs = "THE CAGE NEEDS NO INTRODUCTION",
+                                    desc = "THE CAGE NEEDS NO INTRODUCTION",
                                     hp = 500,
                                     mana = 1000,
                                     attack = 30,
@@ -199,7 +199,7 @@ class TheCage(Enemy):
                                     mres = 15,
                                     strength = 20,
                                     agl = 30,
-                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1)
+                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
                                     )                                           
                                            
@@ -207,7 +207,7 @@ class Dragon(Enemy):
           def __init__(self):
                     super().__init__(name ="Dragon",
                                     gold = 600,
-                                    decs = "a bigger clever girl",
+                                    desc = "a bigger clever girl",
                                     hp = 1500,
                                     mana = 2000,
                                     attack = 80,
@@ -215,7 +215,7 @@ class Dragon(Enemy):
                                     mres = 20,
                                     strength = 25,
                                     agl = 20,
-                                    drops=[("Greater Health Potion", 3, 3),("Greater Mana Potion", 2, 3)
+                                    drops=[("Greater Health Potion", 3, 3),("Greater Mana Potion", 2, 3),
                                           ("Platemail", 4, 1), ("Ring of Health", 1, 1)] 
                                     )                                           
                                            
@@ -223,7 +223,7 @@ class EvilWhiteRabbit(Enemy):
           def __init__(self):
                     super().__init__(name ="Evil White Rabbit",
                                     gold = 40,
-                                    decs = "RUN AWAY RUN AWAY",
+                                    desc = "RUN AWAY RUN AWAY",
                                     hp = 200,
                                     mana = 500,
                                     attack = 30,
@@ -231,7 +231,7 @@ class EvilWhiteRabbit(Enemy):
                                     mres = 5,
                                     strength = 15,
                                     agl = 50,
-                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1)
+                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
                                     )                                           
                                            
@@ -239,7 +239,7 @@ class ExGirlfriend(Enemy):
           def __init__(self):
                     super().__init__(name ="Ex-Girlfriend",
                                     gold = 1000,
-                                    decs = "ya dead son",
+                                    desc = "ya dead son",
                                     hp = 4000,
                                     mana = 5000,
                                     attack = 50,
@@ -247,14 +247,14 @@ class ExGirlfriend(Enemy):
                                     mres = 10,
                                     strength = 15,
                                     agl = 15,
-                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1)
+                                    drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
                                     )                                           
 class Wolf(Enemy):
           def __init__(self):
                     super().__init__(name ="Wolf",
                                     gold = 20,
-                                    decs = "big ol bork bork",
+                                    desc = "big ol bork bork",
                                     hp = 200,
                                     mana = 500,
                                     attack = 20,
@@ -269,7 +269,7 @@ class AlphaWolf(Enemy):
            def __init__(self):
                     super().__init__(name ="Alpha Wolf",
                                     gold = 50,
-                                    decs = "The biggest ol bork bork",
+                                    desc = "The biggest ol bork bork",
                                     hp = 400,
                                     mana = 1000,
                                     attack = 35,
@@ -284,7 +284,7 @@ class HouseCat(Enemy):
           def __init__(self):
                     super().__init__(name ="House Cat",
                                     gold = 15,
-                                    decs = "Dont go for the belly, ITS A TRAP!!",
+                                    desc = "Dont go for the belly, ITS A TRAP!!",
                                     hp = 150,
                                     mana = 200,
                                     attack = 15,
@@ -292,14 +292,14 @@ class HouseCat(Enemy):
                                     mres = 5,
                                     strength = 5,
                                     agl = 20,
-                                    drop = [("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
                                     )
 
 class Bat(Enemy):
           def __init__(self):
                     super().__init__(name ="Bat",
                                     gold = 10,
-                                    decs = "maybe youll become the batman",
+                                    desc = "maybe youll become the batman",
                                     hp = 100,
                                     mana = 200,
                                     attack = 10,
@@ -307,13 +307,13 @@ class Bat(Enemy):
                                     mres = 5,
                                     strength = 10,
                                     agl = 15,
-                                    drop = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     )
 class LandDolphin(Enemy):
           def __init__(self):
                     super().__init__(name ="Land Dolphin",
                                     gold = 150,
-                                    decs = "dat hell....dat dolphins on land",
+                                    desc = "dat hell....dat dolphins on land",
                                     hp = 300,
                                     mana = 500,
                                     attack = 25,
@@ -321,14 +321,14 @@ class LandDolphin(Enemy):
                                     mres = 10,
                                     strength = 15,
                                     agl = 5,
-                                    drop = [("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
                                     ) 
    
 class Llamas(Enemy):
           def __init__(self):
                     super().__init__(name ="Llama",
                                     gold = 100,
-                                    decs = "CCCCAAAAARARRRRRLLLLLLLLLLLLL",
+                                    desc = "CCCCAAAAARARRRRRLLLLLLLLLLLLL",
                                     hp = 250,
                                     mana = 500,
                                     attack = 20,
@@ -336,14 +336,14 @@ class Llamas(Enemy):
                                     mres = 10,
                                     strength = 15,
                                     agl = 10,
-                                    drop = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
 
 class SludgeMonster(Enemy):
           def __init__(self):
                     super().__init__(name ="Sludge Monster",
                                     gold = 300,
-                                    decs = "A big ball of slimmy trash that throws parts of itself at you",
+                                    desc = "A big ball of slimmy trash that throws parts of itself at you",
                                     hp = 400,
                                     mana = 500,
                                     attack = 35,
@@ -351,14 +351,14 @@ class SludgeMonster(Enemy):
                                     mres = 20,
                                     strength = 20,
                                     agl = 5,
-                                    drop = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
                     
 class LazerShark(Enemy):
           def __init__(self):
                     super().__init__(name ="Lazer Shark",
                                     gold = 300,
-                                    decs = "A shark WIF LAZERS BROOOOO",
+                                    desc = "A shark WIF LAZERS BROOOOO",
                                     hp = 400,
                                     mana = 500,
                                     attack = 35,
@@ -366,14 +366,14 @@ class LazerShark(Enemy):
                                     mres = 20,
                                     strength = 20,
                                     agl = 5,
-                                    drop = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
     
 class Gerdzilla(Enemy):
           def __init__(self):
                     super().__init__(name ="Gerdzilla",
                                     gold = 500,
-                                    decs = "rawr xD",
+                                    desc = "rawr xD",
                                     hp = 700,
                                     mana = 1000,
                                     attack = 45,
@@ -381,12 +381,12 @@ class Gerdzilla(Enemy):
                                     mres = 20,
                                     strength = 30,
                                     agl = 10,
-                                    drop = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
                     
                                             
 enemies = { 'Skeleton'          : Skeleton(),               
-          'Armored Skeleton'    : ArmoredSkeleton(),       
+          'Armored Skeleton'    : ArmorSkeleton(),       
           'Zombie'              : Zombie(),                   
           'Giant Spider'        : GiantSpider(),             
           'Vampire Acolyte'     : VampireAcolyte(),          
@@ -405,7 +405,7 @@ enemies = { 'Skeleton'          : Skeleton(),
           'House Cat'           : HouseCat(),
           'Bat'                 : Bat(),
           'Land Dolphin'        : LandDolphin(),
-          'Sludge Monster'      : SlugeMonster(),
+          'Sludge Monster'      : SludgeMonster(),
           'Lazer Shark'         : LazerShark(),
           'Gerdzilla'           : Gerdzilla()
         }
@@ -429,6 +429,3 @@ enemyGroups = { 'Skellies' :            ['Skeleton', 'Skeleton', 'Skeleton'],
                'Orcha Squad' :          ['King Orcha', 'Orcha Minion', 'Orcha Minion', 'Orcha Minion', 'Orcha Minion'],
                'Boss 3' :               ['Ex-Girlfriend']
                }
-                                           
-                                           
-                                           
