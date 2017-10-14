@@ -28,4 +28,20 @@ class State:
             
         def increaseArcadeS(self):
             self.arcadeSate += 1
+            
+        def increaseDungeonS(self):
+            self.dungeonState += 1
+            
+        def save(self):
+            save = open("save.txt", "w")
+            print(worldState)
+            print(arcadeState)
+            print(dungeonState)
+            save.close()
+            
+        def load(self):
+            save = open("save.txt", "r")
+            self.worldState = (int(s) for s in line.split())
+            self.arcadeState
+            self.dungeonState
     
