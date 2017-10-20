@@ -1,0 +1,9 @@
+dialog {}
+
+price = 20
+
+def stayTheNight(n,player):
+  player.removeGold(price)
+  
+def returnPlayer():  
+  
