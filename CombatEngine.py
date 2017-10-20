@@ -1,4 +1,5 @@
 import Enemies as E
+import random
 
 class Combat:
     def __init__(self, player, enemy):
@@ -22,4 +23,13 @@ class Combat:
 
     def calcEnemyDamage(player, enemy):
         return ((enemy.damage + enemy.strength)*(player.armor/100))
-    
+   
+    def loseEvent(player)
+        player.gold = int(player.gold * .9)
+        invn = player.inventory.getInventory()
+        item = random.randomchoice(invn)
+        player.inventory.removeitem(item[0], 1)
+        player.inventory.removeitem(item[0], 1)
+
+        
+        
