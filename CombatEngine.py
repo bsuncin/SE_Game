@@ -1,5 +1,6 @@
 import Enemies as E
 import random
+import queue
 
 class Combat:
     def __init__(self, player, enemy):
@@ -34,6 +35,7 @@ class Combat:
     def winCase(player, enemy)
         player.addgold(player, enemy.gold)
         player.xp += enemy.xp
+        player.classes[player.cla].addxp(enemy.xp)
         item = random.randomchoice(enemy.drops)
         player.inventory.additem(player, item[0], item[1])
-        
+   
