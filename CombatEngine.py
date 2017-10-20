@@ -19,3 +19,7 @@ class Combat:
         elif player.firsthand[0] == True
             return calcWeaponDam(player.firsthand[1], enemy)
         else return int(player.strength / 4)
+
+    def calcEnemyDamage(player, enemy):
+        return ((enemy.damage + enemy.strength)*(player.armor/100))
+    
