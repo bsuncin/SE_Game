@@ -292,7 +292,7 @@ class HouseCat(Enemy):
                                     mres = 5,
                                     xp = 5,
                                     agl = 20,
-                                    drops = [("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Fang", 4, 2),("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
                                     )
 
 class Bat(Enemy):
@@ -307,7 +307,7 @@ class Bat(Enemy):
                                     mres = 5,
                                     xp = 10,
                                     agl = 15,
-                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     )
 class LandDolphin(Enemy):
           def __init__(self):
@@ -336,7 +336,7 @@ class Llamas(Enemy):
                                     mres = 10,
                                     xp = 15,
                                     agl = 10,
-                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
 
 class SludgeMonster(Enemy):
@@ -381,11 +381,11 @@ class Gerdzilla(Enemy):
                                     mres = 20,
                                     xp = 30,
                                     agl = 10,
-                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
                     
                                             
-enemies = { 'Skeleton'          : Skeleton(),               
+enemies = {'Skeleton'          : Skeleton(),               
           'Armored Skeleton'    : ArmorSkeleton(),       
           'Zombie'              : Zombie(),                   
           'Giant Spider'        : GiantSpider(),             
@@ -410,10 +410,12 @@ enemies = { 'Skeleton'          : Skeleton(),
           'Gerdzilla'           : Gerdzilla()
         }
 
-enemyGroups = { 'Skellies' :            ['Skeleton', 'Skeleton', 'Skeleton'],
+enemyGroups = {'Skellies' :             ['Skeleton', 'Skeleton', 'Skeleton'],
                'Hard Skellies' :        ['Armored Skeleton', 'Skeleton', 'Skeleton'],
+               'Armored Skellies':      ['Armored Skeleton','Armored Skeleton','Armored Skeleton'],
                'Boss 1' :               ['Lord Pepe'],
                'Vamp Bitches' :         ['Blue Haired Vampire', 'Vampire Acolyte', 'Vampire Acolyte'],
+               'Blue Nightmare'         ['Blue Haired Vampire','Blue Haired Vampire','Blue Haired Vampire'],
                'Wolf Pack' :            ['Wolf', 'Wolf', 'Wolf'],
                'Aplha Pack' :           ['Alpha Wolf', 'Wolf', 'Wolf'],
                'Full Alpha' :           ['Alpha Wolf', 'Alpha Wolf', 'Alpha Wolf'],
@@ -425,7 +427,8 @@ enemyGroups = { 'Skellies' :            ['Skeleton', 'Skeleton', 'Skeleton'],
                'Cute Group' :           ['House Cat', 'Evil White Rabbit', 'House Cat'],
                'Aqua Group' :           ['Lazer Shark', 'Land Dolphin', 'Land Dolphin'],
                'Garbage Group' :        ['Sludge Monster','Sludge Monster','Sludge Monster'],
-               'Dino Group' :           ['Gerdzilla', 'Velociraptor', 'Velociraptor'],
+               'rawr xd Group' :        ['Gerdzilla', 'Velociraptor', 'Velociraptor'],
                'Orcha Squad' :          ['King Orcha', 'Orcha Minion', 'Orcha Minion', 'Orcha Minion', 'Orcha Minion'],
-               'Boss 3' :               ['Ex-Girlfriend']
+               'Boss 3' :               ['Ex-Girlfriend'],
+               'idk Group':             ['House Cat','The Cage','Lazer Shark']
                }
