@@ -25,7 +25,7 @@ class Combat:
     def calcEnemyDamage(player, enemy):
         return (enemy.damage * (player.armor/100))
    
-    def loseEvent(player)
+    def loseCase(player)
         player.gold = int(player.gold * .9)
         invn = player.inventory.getInventory()
         item = random.randomchoice(invn)
