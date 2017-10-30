@@ -15,6 +15,7 @@ class Player:
         self.strength = 20
         self.damres = 0
         self.agility = 20
+        self.wis = 10
         self.armor = (False, None)
         self.firstfinger  = (False, None)
         self.secondfinger = (False, None)
