@@ -1,0 +1,29 @@
+--Intro to the game--
+  Narrator: Once upon a time in a land not quite far away but really somewhat not incredibly close, so pretty much in 
+            an indiclosed area in the middle of far and close there was a great evil that fell on the kingdom of Antisoc.
+          : Antisoc was once a kingdom where memes were plentiful and chicken tendies abundant, but it has now fallen 
+            into the darkness that is crappy reposts and Kale Salads.
+          : This evil darkness was brought upon the land by one reason the disappearance of the Queen "Queen Slay" whose 
+            husband, The King, threw off the balance of the land with his sorrow.
+          : Many have tried and many have failed, only the Mightest adventurer can help save the Queen and bring balance 
+            back to the kingdom.
+            
+--Meeting King Pepe--
+  King Pepe: *crying* WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!
+           : *sniff* oh hi didnt see you there, you probably already know why Im crying from some sort of narration, well 
+              take a seat anyway im going to tell you again, my Queen was abducted from me when we were strolling around 
+              outside the castle and was taken to THE CAGEE!! at the top floor of the DUNGEON OF optional DOOOOMM!!!!
+           : I couldnt do anything but sit and watch the hooligans take my Queen because of my accursed stubby legs.
+           : Please man ya gotta help me get my Queen back shes all I got.
+           
+--Gives Option to say yes or no--
+If No:
+      King Pepe: Well fine you look like a weakling anyway, I can just find someone else to die for me.
+      ****You trip on a stick and die from embarrassment........ and head trama.****
+If Yes:
+      King Pepe: oh.....really, I didnt think I'd get this far, no one has been crazy enough to say yes to this sucide mission.
+               : well if you are going out to that killing machine I might as well give you a fighting chance.
+               : How do you like to fight?
+               ***Give option of choosing class then gives weapon accordingly***
+               
+            
