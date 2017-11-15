@@ -12,7 +12,7 @@
   King Pepe: *crying* WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!
            : *sniff* oh hi didnt see you there, you probably already know why Im crying from some sort of narration, well 
               take a seat anyway im going to tell you again, my Queen was abducted from me when we were strolling around 
-              outside the castle and was taken to THE CAGEE!! at the top floor of the DUNGEON OF optional DOOOOMM!!!!
+              outside the castle and was taken to THE CAGE!! at the top floor of the DUNGEON OF optional DOOOOMM!!!!
            : I couldnt do anything but sit and watch the hooligans take my Queen because of my accursed stubby legs.
            : Please man ya gotta help me get my Queen back shes all I got.
            
@@ -24,6 +24,29 @@ If Yes:
       King Pepe: oh.....really, I didnt think I'd get this far, no one has been crazy enough to say yes to this sucide mission.
                : well if you are going out to that killing machine I might as well give you a fighting chance.
                : How do you like to fight?
-               ***Give option of choosing class then gives weapon accordingly***
+               ***Give option of choosing class then gives weapon accordingly, only gives stick***
                
-            
+--Goes into Dungeon to start journey--
+
+--Once you fight through all the levels of the Dungeon--
+      --Final Boss--
+      
+      The Cage: “How… In the name of Zeus’s BUTTHOLE, did you get to the top of my tower...... OF DOOOOOOOOOM!?”
+              : You're probably looking to free that wretched Queen, well youre not the first AND YA WONT BE THE LAST
+              : Its time for a "Face Off"
+              
+--Once you beat him--
+      The Cage: You........ you beat me youre a national treasure.
+              : YOURE A FOOL HOWEVER
+              : I wasnt trying to destroy this world I was trying to save it
+              : QUEEN SLAY IS THE EVIL ONE
+              *dies*
+              
+      Queen Slay: HAHA AHAHAH HA HAH A some dingus finally freed me
+                : TIME FOR THIS WORLD TO DIE MUAHAHAHa
+                
+--You beat her you win--                
+
+
+
+
