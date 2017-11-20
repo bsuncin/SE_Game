@@ -262,7 +262,7 @@ class Wolf(Enemy):
                                     mres = 5,
                                     xp = 10,
                                     agl = 15,
-                                    drops= [("Fang", 4, 2),("Health Potion",3 , 1),("Mana Potion", 3,1)]
+                                    drops= [("Sword", 1, 1),("Fang", 4, 2),("Health Potion",3 , 1),("Mana Potion", 3,1)]
                                     ) 
 
 class AlphaWolf(Enemy):
@@ -277,7 +277,7 @@ class AlphaWolf(Enemy):
                                     mres = 10,
                                     xp = 20,
                                     agl = 20,
-                                    drops= [("Fang", 4, 2),("Health Potion",3 , 1),("Mana Potion", 3,1)]
+                                    drops= [("Sword", 1, 1),("Fang", 4, 2),("Health Potion",3 , 1),("Mana Potion", 3,1)]
                                     ) 
                                             
 class HouseCat(Enemy):
@@ -292,7 +292,7 @@ class HouseCat(Enemy):
                                     mres = 5,
                                     xp = 5,
                                     agl = 20,
-                                    drops = [("Fang", 4, 2),("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Sword", 1, 1),("Fang", 4, 2),("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
                                     )
 
 class Bat(Enemy):
@@ -307,7 +307,7 @@ class Bat(Enemy):
                                     mres = 5,
                                     xp = 10,
                                     agl = 15,
-                                    drops = [("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Sword", 1, 1),("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     )
 class LandDolphin(Enemy):
           def __init__(self):
@@ -321,7 +321,7 @@ class LandDolphin(Enemy):
                                     mres = 10,
                                     xp = 15,
                                     agl = 5,
-                                    drops = [("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Sword", 1, 1),("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
                                     ) 
    
 class Llamas(Enemy):
@@ -336,7 +336,7 @@ class Llamas(Enemy):
                                     mres = 10,
                                     xp = 15,
                                     agl = 10,
-                                    drops = [("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Sword", 1, 1),("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
 
 class SludgeMonster(Enemy):
@@ -351,7 +351,7 @@ class SludgeMonster(Enemy):
                                     mres = 20,
                                     xp = 20,
                                     agl = 5,
-                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Sword", 1, 1),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
                     
 class LazerShark(Enemy):
@@ -366,7 +366,7 @@ class LazerShark(Enemy):
                                     mres = 20,
                                     xp = 20,
                                     agl = 5,
-                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Sword", 1, 1),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
     
 class Gerdzilla(Enemy):
@@ -381,7 +381,7 @@ class Gerdzilla(Enemy):
                                     mres = 20,
                                     xp = 30,
                                     agl = 10,
-                                    drops = [("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Sword", 1, 1),("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
                     
                                             
