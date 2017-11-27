@@ -1,7 +1,6 @@
 import pygame
 import time
 import random
-import AltMenu
 import Items
 
 pygame.init()
@@ -184,8 +183,13 @@ class Shop:
         self.PInven.removeItem('Health Potion', self.buttons['Health Potion'])
         self.PInven.gold += (self.buttons['Health Potion'] * self.PInven.getPrice('Health Potion'))
         self.resetAll()
+
+
+
+
+
         
-        
+
     def decreaseManaPotion(self):
         self.buttons['Mana Potion'] -= 1
 
@@ -197,12 +201,7 @@ class Shop:
         self.PInven.gold -= (self.buttons['Mana Potion'] * self.PInven.getPrice('Mana Potion'))
         self.buttons['Mana Potion'] = 0
         self.resetAll()
-        
-    def sellManaPotion(self):
-        self.PInven.removeItem('Mana Potion', self.buttons['Mana Potion'])
-        self.PInven.gold += (self.buttons['Mana Potion'] * self.PInven.getPrice('Mana Potion'))
-        self.resetAll()
-        
+
     def decreaseSkellyEye(self):
         self.buttons['Skelly Eye'] -= 1
 
@@ -215,11 +214,6 @@ class Shop:
         self.buttons['Skelly Eye'] = 0
         self.resetAll()
 
-    def sellSkellyEye(self):
-        self.PInven.removeItem('Skelly Eye', self.buttons['Skelly Eye'])
-        self.PInven.gold += (self.buttons['Skelly Eye'] * self.PInven.getPrice('Skelly Eye'))
-        self.resetAll()
-        
     def decreaseLeather(self):
         self.buttons['Leather'] -= 1
 
@@ -232,11 +226,6 @@ class Shop:
         self.buttons['Leather'] = 0
         self.resetAll()
 
-    def sellLeather(self):
-        self.PInven.removeItem('Leather', self.buttons['Leather'])
-        self.PInven.gold += (self.buttons['Leather'] * self.PInven.getPrice('Leather'))
-        self.resetAll()
-        
     def decreaseChainmail(self):
         self.buttons['Chainmail'] -= 1
 
@@ -248,12 +237,7 @@ class Shop:
         self.PInven.gold -= (self.buttons['Chainmail'] * self.PInven.getPrice('Chainmail'))
         self.buttons['Chainmail'] = 0
         self.resetAll()
-        
-    def sellChainmail(self):
-        self.PInven.removeItem('Chainmail', self.buttons['Chainmail'])
-        self.PInven.gold += (self.buttons['Chainmail'] * self.PInven.getPrice('Chainmail'))
-        self.resetAll()
-        
+
     def decreaseManaRing(self):
         self.buttons['Ring of Mana'] -= 1
 
@@ -326,11 +310,26 @@ class Shop:
     def escape(self):
         self.Run = False
 
+    def blackout(self):
+        counter = 0
+        
+        while counter != 20:
+            
+            for event in pygame.event.get():
+                print(event)
+                if event.type == pygame.QUIT:
+                    break
+            gameDisplay.fill(black)
+
+
+            pygame.display.update()
+            clock.tick(15)
+            counter += 1
+
 # Sell ---------------------------------------------------------------------------------------------
 
     def sell(self):
         dialog = random.choice(self.sellDia)
-        
         while self.shop:
             for event in pygame.event.get():
                 print(event)
@@ -352,26 +351,26 @@ class Shop:
 
 
             text("Fang",100,250,100,50,green)
-            text(str(self.PInven.getPrice('Fang'))+ "G",200,250,100,50,white)
+            text(str(int(self.PInven.getPrice('Fang')/2))+ "G",200,250,100,50,white)
             
             if self.buttons['Fang'] == 0:
                 text("<--",300,250,50,50,grey)
             else:
                 button("<--",300,250,50,50,red,bright_red,self.decreaseFang)
             
-            text(str(self.buttons['Fang']),350,250,50,50,white)
+            text(str(self.PInven.checkAmount('Fang') - self.buttons['Fang']),350,250,50,50,white)
 
-            if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) >= self.PInven.gold:
+            if self.PInven.checkAmount('Fang') == self.buttons['Fang']:
                 text("-->",400,250,50,50,grey)
             else:
                 button("-->",400,250,50,50,red, bright_red,self.increaseFang)
             
-            text(str(self.PInven.getPrice('Fang') * self.buttons['Fang']) + "G",450,250,100,50,green)
+            text(str(int(self.PInven.getPrice('Fang') / 2) * self.buttons['Fang']) + "G",450,250,100,50,green)
 
             if self.buttons['Fang'] == 0:
-                text("buy",550,250,50,50,grey)
+                text("sell",550,250,50,50,grey)
             else:
-                button("buy",550,250,50,50,red,bright_red,self.buyFang)
+                button("sell",550,250,50,50,red,bright_red,self.sellFang)
 
 
 
@@ -1265,18 +1264,10 @@ class Shop:
 
             if self.shop == False:
                 dialog = random.choice(self.introDia)
+                self.resetAll()
                 self.shop = True
 
             pygame.display.update()
             clock.tick(15)
-
+        self.blackout()
         return self.PInven
-
-        
-
-
-
-
-
-
-
