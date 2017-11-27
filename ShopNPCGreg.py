@@ -184,12 +184,6 @@ class Shop:
         self.PInven.gold += (self.buttons['Health Potion'] * self.PInven.getPrice('Health Potion'))
         self.resetAll()
 
-
-
-
-
-        
-
     def decreaseManaPotion(self):
         self.buttons['Mana Potion'] -= 1
 
@@ -202,6 +196,11 @@ class Shop:
         self.buttons['Mana Potion'] = 0
         self.resetAll()
 
+    def sellManaPotion(self):
+        self.PInven.removeItem('Mana Potion', self.buttons['Mana Potion'])
+        self.PInven.gold += (self.buttons['Mana Potion'] * self.PInven.getPrice('Mana Potion'))
+        self.resetAll()
+        
     def decreaseSkellyEye(self):
         self.buttons['Skelly Eye'] -= 1
 
@@ -214,6 +213,11 @@ class Shop:
         self.buttons['Skelly Eye'] = 0
         self.resetAll()
 
+    def sellSkellyEye(self):
+        self.PInven.removeItem('Skelly Eye', self.buttons['Skelly Eye'])
+        self.PInven.gold += (self.buttons['Skelly Eye'] * self.PInven.getPrice('Skelly Eye'))
+        self.resetAll()
+        
     def decreaseLeather(self):
         self.buttons['Leather'] -= 1
 
@@ -226,6 +230,11 @@ class Shop:
         self.buttons['Leather'] = 0
         self.resetAll()
 
+    def sellLeather(self):
+        self.PInven.removeItem('Leather', self.buttons['Leather'])
+        self.PInven.gold += (self.buttons['Leather'] * self.PInven.getPrice('Leather'))
+        self.resetAll()
+        
     def decreaseChainmail(self):
         self.buttons['Chainmail'] -= 1
 
@@ -238,6 +247,11 @@ class Shop:
         self.buttons['Chainmail'] = 0
         self.resetAll()
 
+    def sellChainmail(self):
+        self.PInven.removeItem('Chainmail', self.buttons['Chainmail'])
+        self.PInven.gold += (self.buttons['Chainmail'] * self.PInven.getPrice('Chainmail'))
+        self.resetAll()
+        
     def decreaseManaRing(self):
         self.buttons['Ring of Mana'] -= 1
 
@@ -250,6 +264,11 @@ class Shop:
         self.buttons['Ring of Mana'] = 0
         self.resetAll()
 
+    def sellManaRing(self):
+        self.PInven.removeItem('Ring of Mana', self.buttons['Ring of Mana'])
+        self.PInven.gold += (self.buttons['Ring of Mana'] * self.PInven.getPrice('Ring of Mana'))
+        self.resetAll()
+        
     def decreaseGreaterManaPotion(self):
         self.buttons['Greater Mana Potion'] -= 1
 
@@ -262,6 +281,11 @@ class Shop:
         self.buttons['Greater Mana Potion'] = 0
         self.resetAll()
 
+    def sellGreaterManaPotion(self):
+        self.PInven.removeItem('Greater Mana Potion', self.buttons['Greater Mana Potion'])
+        self.PInven.gold += (self.buttons['Greater Mana Potion'] * self.PInven.getPrice('Greater Mana Potion'))
+        self.resetAll()
+        
     def decreasePlatemail(self):
         self.buttons['Platemail'] -= 1
 
@@ -274,6 +298,11 @@ class Shop:
         self.buttons['Platemail'] = 0
         self.resetAll()
 
+    def sellPlatemail(self):
+        self.PInven.removeItem('Platemail', self.buttons['Platemail'])
+        self.PInven.gold += (self.buttons['Platemail'] * self.PInven.getPrice('Platemail'))
+        self.resetAll()
+        
     def decreaseDagger(self):
         self.buttons['Dagger'] -= 1
 
@@ -286,6 +315,11 @@ class Shop:
         self.buttons['Dagger'] = 0
         self.resetAll()
 
+    def sellDagger(self):
+        self.PInven.removeItem('Dagger', self.buttons['Dagger'])
+        self.PInven.gold += (self.buttons['Dagger'] * self.PInven.getPrice('Dagger'))
+        self.resetAll()
+        
     def decreaseGreaterHealthPotion(self):
         self.buttons['Greater Health Potion'] -= 1
 
@@ -296,6 +330,11 @@ class Shop:
         self.PInven.addItem('Greater Health Potion', self.buttons['Greater Health Potion'])
         self.PInven.gold -= (self.buttons['Greater Health Potion'] * self.PInven.getPrice('Greater Health Potion'))
         self.buttons['Greater Health Potion'] = 0
+        self.resetAll()
+    
+    def sellGreaterHealthPotion(self):
+        self.PInven.removeItem('Greater Health Potion', self.buttons['Greater Health Potion'])
+        self.PInven.gold += (self.buttons['Greater Health Potion'] * self.PInven.getPrice('Greater Health Potion'))
         self.resetAll()
 
 
@@ -375,146 +414,146 @@ class Shop:
 
 
             text("H Ring",100,300,100,50,green)
-            text(str(self.PInven.getPrice('Ring of Health'))+ "G",200,300,100,50,white)
+            text(str(int(self.PInven.getPrice('Ring of Health')/2))+ "G",200,300,100,50,white)
             
             if self.buttons['Ring of Health'] == 0:
                 text("<--",300,300,50,50,grey)
             else:
                 button("<--",300,300,50,50,red,bright_red,self.decreaseROH)
             
-            text(str(self.buttons['Ring of Health']),350,300,50,50,white)
+            text(str(self.PInven.checkAmount('Ring of Health') - self.buttons['Ring of Health']),350,300,50,50,white)
 
-            if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) >= self.PInven.gold:
-                text("-->",400,300,50,50,grey)
+            if self.PInven.checkAmount('Ring of Health') == self.buttons['Ring of Health']:
+                text("-->",400,250,50,50,grey)
             else:
-                button("-->",400,300,50,50,red, bright_red,self.increaseROH)
+                button("-->",400,250,50,50,red, bright_red,self.increaseROH)
             
-            text(str(self.PInven.getPrice('Ring of Health') * self.buttons['Ring of Health']) + "G",450,300,100,50,green)
+            text(str(int(self.PInven.getPrice('Ring of Health')/2) * self.buttons['Ring of Health']) + "G",450,300,100,50,green)
 
             if self.buttons['Ring of Health'] == 0:
-                text("buy",550,300,50,50,grey)
+                text("sell",550,300,50,50,grey)
             else:
-                button("buy",550,300,50,50,red,bright_red,self.buyROH)
+                button("sell",550,300,50,50,red,bright_red,self.sellROH)
 
 
 
             text("Sword",100,550,100,50,green)
-            text(str(self.PInven.getPrice('Sword'))+ "G",200,550,100,50,white)
+            text(str(int(self.PInven.getPrice('Sword')/2))+ "G",200,550,100,50,white)
             
             if self.buttons['Sword'] == 0:
                 text("<--",300,550,50,50,grey)
             else:
                 button("<--",300,550,50,50,red,bright_red,self.decreaseSword)
             
-            text(str(self.buttons['Sword']),350,550,50,50,white)
+            text(str(self.PInven.checkAmount('Sword') - self.buttons['Sword']),350,550,50,50,white)
 
-            if (self.PInven.getPrice('Sword') * (self.buttons['Sword'] + 1)) > self.PInven.gold:
-                text("-->",400,550,50,50,grey)
+            if self.PInven.checkAmount('Sword') == self.buttons['Sword']:
+                text("-->",400,250,50,50,grey)
             else:
-                button("-->",400,550,50,50,red, bright_red,self.increaseSword)
+                button("-->",400,250,50,50,red, bright_red,self.increaseSword)
             
-            text(str(self.PInven.getPrice('Sword') * self.buttons['Sword']) + "G",450,550,100,50,green)
+            text(str(int(self.PInven.getPrice('Sword') / 2) * self.buttons['Sword']) + "G",450,550,100,50,green)
 
             if self.buttons['Sword'] == 0:
-                text("buy",550,550,50,50,grey)
+                text("sell",550,550,50,50,grey)
             else:
-                button("buy",550,550,50,50,red,bright_red,self.buySword)
+                button("sell",550,550,50,50,red,bright_red,self.sellSword)
 
 
 
             text("Health Pot",100,350,100,50,green)
-            text(str(self.PInven.getPrice('Health Potion'))+ "G",200,350,100,50,white)
+            text(str(int(self.PInven.getPrice('Health Potion')/2))+ "G",200,350,100,50,white)
             
             if self.buttons['Health Potion'] == 0:
                 text("<--",300,350,50,50,grey)
             else:
                 button("<--",300,350,50,50,red,bright_red,self.decreaseHealthPotion)
             
-            text(str(self.buttons['Health Potion']),350,350,50,50,white)
+            text(str(self.PInven.checkAmount('Health Potion') - self.buttons['Health Potion']),350,350,50,50,white)
 
-            if (self.PInven.getPrice('Health Potion') * (self.buttons['Health Potion'] + 1)) > self.PInven.gold:
-                text("-->",400,350,50,50,grey)
+            if self.PInven.checkAmount('Health Potion') == self.buttons['Health Potion']:
+                text("-->",400,250,50,50,grey)
             else:
-                button("-->",400,350,50,50,red, bright_red,self.increaseHealthPotion)
+                button("-->",400,250,50,50,red, bright_red,self.increaseHealthPotion)
             
-            text(str(self.PInven.getPrice('Health Potion') * self.buttons['Health Potion']) + "G",450,350,100,50,green)
+            text(str(int(self.PInven.getPrice('Health Potion')/2) * self.buttons['Health Potion']) + "G",450,350,100,50,green)
 
             if self.buttons['Health Potion'] == 0:
-                text("buy",550,350,50,50,grey)
+                text("sell",550,350,50,50,grey)
             else:
-                button("buy",550,350,50,50,red,bright_red,self.buyHealthPotion)
+                button("sell",550,350,50,50,red,bright_red,self.sellHealthPotion)
 
 
 
             text("Mana Pot",100,400,100,50,green)
-            text(str(self.PInven.getPrice('Mana Potion'))+ "G",200,400,100,50,white)
+            text(str(int(self.PInven.getPrice('Mana Potion')/2))+ "G",200,400,100,50,white)
             
             if self.buttons['Mana Potion'] == 0:
                 text("<--",300,400,50,50,grey)
             else:
                 button("<--",300,400,50,50,red,bright_red,self.decreaseManaPotion)
             
-            text(str(self.buttons['Mana Potion']),350,400,50,50,white)
+            text(str(self.PInven.checkAmount('Mana Potion') - self.buttons['Mana Potion']),350,400,50,50,white)
 
-            if (self.PInven.getPrice('Mana Potion') * (self.buttons['Mana Potion'] + 1)) > self.PInven.gold:
-                text("-->",400,400,50,50,grey)
+            if self.PInven.checkAmount('Mana Potion') == self.buttons['Mana Potion']:
+                text("-->",400,250,50,50,grey)
             else:
-                button("-->",400,400,50,50,red, bright_red,self.increaseManaPotion)
+                button("-->",400,250,50,50,red, bright_red,self.increaseManaPotion)
             
-            text(str(self.PInven.getPrice('Mana Potion') * self.buttons['Mana Potion']) + "G",450,400,100,50,green)
+            text(str(int(self.PInven.getPrice('Mana Potion')/2) * self.buttons['Mana Potion']) + "G",450,400,100,50,green)
 
             if self.buttons['Mana Potion'] == 0:
-                text("buy",550,400,50,50,grey)
+                text("sell",550,400,50,50,grey)
             else:
-                button("buy",550,400,50,50,red,bright_red,self.buyManaPotion)
+                button("sell",550,400,50,50,red,bright_red,self.sellManaPotion)
 
 
 
             text("Skelly Eye",100,450,100,50,green)
-            text(str(self.PInven.getPrice('Skelly Eye'))+ "G",200,450,100,50,white)
+            text(str(int(self.PInven.getPrice('Skelly Eye')/2))+ "G",200,450,100,50,white)
             
             if self.buttons['Skelly Eye'] == 0:
                 text("<--",300,450,50,50,grey)
             else:
                 button("<--",300,450,50,50,red,bright_red,self.decreaseSkellyEye)
             
-            text(str(self.buttons['Skelly Eye']),350,450,50,50,white)
+            text(str(self.PInven.checkAmount('Skelly Eye') - self.buttons['Skelly Eye']),350,450,50,50,white)
 
-            if (self.PInven.getPrice('Skelly Eye') * (self.buttons['Skelly Eye'] + 1)) > self.PInven.gold:
-                text("-->",400,450,50,50,grey)
+            if self.PInven.checkAmount('Skelly Eye') == self.buttons['Skelly Eye']:
+                text("-->",400,250,50,50,grey)
             else:
-                button("-->",400,450,50,50,red, bright_red,self.increaseSkellyEye)
+                button("-->",400,250,50,50,red, bright_red,self.increaseSkellyEye)
             
-            text(str(self.PInven.getPrice('Skelly Eye') * self.buttons['Skelly Eye']) + "G",450,450,100,50,green)
+            text(str(int(self.PInven.getPrice('Skelly Eye')/2) * self.buttons['Skelly Eye']) + "G",450,450,100,50,green)
 
             if self.buttons['Skelly Eye'] == 0:
-                text("buy",550,450,50,50,grey)
+                text("sell",550,450,50,50,grey)
             else:
-                button("buy",550,450,50,50,red,bright_red,self.buySkellyEye)
+                button("sell",550,450,50,50,red,bright_red,self.sellSkellyEye)
 
 
 
             text("Leather",100,500,100,50,green)
-            text(str(self.PInven.getPrice('Leather'))+ "G",200,500,100,50,white)
+            text(str(int(self.PInven.getPrice('Leather')/2))+ "G",200,500,100,50,white)
             
             if self.buttons['Leather'] == 0:
                 text("<--",300,500,50,50,grey)
             else:
                 button("<--",300,500,50,50,red,bright_red,self.decreaseLeather)
             
-            text(str(self.buttons['Leather']),350,500,50,50,white)
+            text(str(self.PInven.checkAmount('Leather') - self.buttons['Leather']),350,500,50,50,white)
 
-            if (self.PInven.getPrice('Leather') * (self.buttons['Leather'] + 1)) > self.PInven.gold:
-                text("-->",400,500,50,50,grey)
+            if self.PInven.checkAmount('Leather') == self.buttons['Leather']:
+                text("-->",400,250,50,50,grey)
             else:
-                button("-->",400,500,50,50,red, bright_red,self.increaseLeather)
+                button("-->",400,250,50,50,red, bright_red,self.increaseLeather)
             
-            text(str(self.PInven.getPrice('Leather') * self.buttons['Leather']) + "G",450,500,100,50,green)
+            text(str(int(self.PInven.getPrice('Leather')/2) * self.buttons['Leather']) + "G",450,500,100,50,green)
 
             if self.buttons['Leather'] == 0:
-                text("buy",550,500,50,50,grey)
+                text("sell",550,500,50,50,grey)
             else:
-                button("buy",550,500,50,50,red,bright_red,self.buyLeather)
+                button("sell",550,500,50,50,red,bright_red,self.sellLeather)
 
             
 
@@ -561,7 +600,7 @@ class Shop:
                 
                 text(str(self.buttons['Fang']),350,250,50,50,white)
 
-                if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) >= self.PInven.gold:
+                if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) > self.PInven.gold:
                     text("-->",400,250,50,50,grey)
                 else:
                     button("-->",400,250,50,50,red, bright_red,self.increaseFang)
@@ -585,7 +624,7 @@ class Shop:
                 
                 text(str(self.buttons['Ring of Health']),350,300,50,50,white)
 
-                if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) >= self.PInven.gold:
+                if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) > self.PInven.gold:
                     text("-->",400,300,50,50,grey)
                 else:
                     button("-->",400,300,50,50,red, bright_red,self.increaseROH)
@@ -730,7 +769,7 @@ class Shop:
                 
                 text(str(self.buttons['Fang']),350,250,50,50,white)
 
-                if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) >= self.PInven.gold:
+                if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) > self.PInven.gold:
                     text("-->",400,250,50,50,grey)
                 else:
                     button("-->",400,250,50,50,red, bright_red,self.increaseFang)
@@ -754,7 +793,7 @@ class Shop:
                 
                 text(str(self.buttons['Ring of Health']),350,300,50,50,white)
 
-                if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) >= self.PInven.gold:
+                if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) > self.PInven.gold:
                     text("-->",400,300,50,50,grey)
                 else:
                     button("-->",400,300,50,50,red, bright_red,self.increaseROH)
@@ -898,7 +937,7 @@ class Shop:
                 
                 text(str(self.buttons['Fang']),350,250,50,50,white)
 
-                if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) >= self.PInven.gold:
+                if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) > self.PInven.gold:
                     text("-->",400,250,50,50,grey)
                 else:
                     button("-->",400,250,50,50,red, bright_red,self.increaseFang)
@@ -922,7 +961,7 @@ class Shop:
                 
                 text(str(self.buttons['Ring of Health']),350,300,50,50,white)
 
-                if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) >= self.PInven.gold:
+                if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) > self.PInven.gold:
                     text("-->",400,300,50,50,grey)
                 else:
                     button("-->",400,300,50,50,red, bright_red,self.increaseROH)
@@ -1066,7 +1105,7 @@ class Shop:
                 
                 text(str(self.buttons['Fang']),350,250,50,50,white)
 
-                if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) >= self.PInven.gold:
+                if (self.PInven.getPrice('Fang') * (self.buttons['Fang'] + 1)) > self.PInven.gold:
                     text("-->",400,250,50,50,grey)
                 else:
                     button("-->",400,250,50,50,red, bright_red,self.increaseFang)
@@ -1090,7 +1129,7 @@ class Shop:
                 
                 text(str(self.buttons['Ring of Health']),350,300,50,50,white)
 
-                if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) >= self.PInven.gold:
+                if (self.PInven.getPrice('Ring of Health') * (self.buttons['Ring of Health'] + 1)) > self.PInven.gold:
                     text("-->",400,300,50,50,grey)
                 else:
                     button("-->",400,300,50,50,red, bright_red,self.increaseROH)
