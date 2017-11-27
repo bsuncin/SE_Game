@@ -184,13 +184,8 @@ class Shop:
         self.PInven.removeItem('Health Potion', self.buttons['Health Potion'])
         self.PInven.gold += (self.buttons['Health Potion'] * self.PInven.getPrice('Health Potion'))
         self.resetAll()
-
-
-
-
-
         
-
+        
     def decreaseManaPotion(self):
         self.buttons['Mana Potion'] -= 1
 
@@ -202,7 +197,12 @@ class Shop:
         self.PInven.gold -= (self.buttons['Mana Potion'] * self.PInven.getPrice('Mana Potion'))
         self.buttons['Mana Potion'] = 0
         self.resetAll()
-
+        
+    def sellManaPotion(self):
+        self.PInven.removeItem('Mana Potion', self.buttons['Mana Potion'])
+        self.PInven.gold += (self.buttons['Mana Potion'] * self.PInven.getPrice('Mana Potion'))
+        self.resetAll()
+        
     def decreaseSkellyEye(self):
         self.buttons['Skelly Eye'] -= 1
 
@@ -215,6 +215,11 @@ class Shop:
         self.buttons['Skelly Eye'] = 0
         self.resetAll()
 
+    def sellSkellyEye(self):
+        self.PInven.removeItem('Skelly Eye', self.buttons['Skelly Eye'])
+        self.PInven.gold += (self.buttons['Skelly Eye'] * self.PInven.getPrice('Skelly Eye'))
+        self.resetAll()
+        
     def decreaseLeather(self):
         self.buttons['Leather'] -= 1
 
@@ -227,6 +232,11 @@ class Shop:
         self.buttons['Leather'] = 0
         self.resetAll()
 
+    def sellLeather(self):
+        self.PInven.removeItem('Leather', self.buttons['Leather'])
+        self.PInven.gold += (self.buttons['Leather'] * self.PInven.getPrice('Leather'))
+        self.resetAll()
+        
     def decreaseChainmail(self):
         self.buttons['Chainmail'] -= 1
 
@@ -238,7 +248,12 @@ class Shop:
         self.PInven.gold -= (self.buttons['Chainmail'] * self.PInven.getPrice('Chainmail'))
         self.buttons['Chainmail'] = 0
         self.resetAll()
-
+        
+    def sellChainmail(self):
+        self.PInven.removeItem('Chainmail', self.buttons['Chainmail'])
+        self.PInven.gold += (self.buttons['Chainmail'] * self.PInven.getPrice('Chainmail'))
+        self.resetAll()
+        
     def decreaseManaRing(self):
         self.buttons['Ring of Mana'] -= 1
 
