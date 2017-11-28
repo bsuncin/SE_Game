@@ -19,8 +19,8 @@ class Player:
         self.armor = (False, None)
         self.firstfinger  = (False, None)
         self.secondfinger = (False, None)
-        self.firsthand = (False, None)
-        self.secondhand = (False, None)
+        self.righthand = (False, None)
+        self.lefthand = (False, None)
         self.skills = S.skills
         self.cla = None
         self.xp = 0
@@ -39,8 +39,8 @@ class Player:
         print("Armor", self.armor)
         print("Firstfinger", self.firstfinger)
         print("Secondfinger", self.secondfinger)
-        print("Firsthand", self.firsthand)
-        print("Secondhand", self.secondhand)
+        print("Righthand", self.righthand)
+        print("Lefthand", self.lefthand)
         print("Skills", self.skills)
         print("Class", self.cla)
         print("xp", self.xp)
