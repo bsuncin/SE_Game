@@ -96,6 +96,27 @@ class Arcade:
 
             def runGame4(self):
                 self.gold -= 15
+
+            def blackout(self):
+                counter = 0
+        
+                while counter != 75:
+            
+                    for event in pygame.event.get():
+                        print(event)
+                        if event.type == pygame.QUIT:
+                            break
+                    gameDisplay.fill(black)
+
+                    if counter >= 15:
+                        medText = pygame.font.SysFont("times",30)
+                        TextSurf, TextRect = text_objects("You feel well rested!", medText, white)
+                        TextRect.center = ((display_width/2),(display_height/2))
+                        gameDisplay.blit(TextSurf, TextRect)
+
+                    pygame.display.update()
+                    clock.tick(15)
+                    counter += 1
                 
             def arcade_intro(self):
 
@@ -114,30 +135,30 @@ class Arcade:
             gameDisplay.blit(text, ((display_width/6),(display_height/42)))
             
             if self.gold >= 15:
-                button("Game 1",75,250,100,50,orange,bright_orange,run)
+                button("Level 1 15G",75,250,100,50,orange,bright_orange,run)
             else:
-                text("Game 1",75,250,100,50,grey)
+                text("Level 1 15G",75,250,100,50,grey)
                 
             if self.gold >= 15:
-                button("Game 2",220,250,100,50,orange,bright_orange,run)
+                button("Level 2 15G",220,250,100,50,orange,bright_orange,run)
             else:
-                text("Game 2",220,250,100,50,grey)
+                text("Level 2 15G",220,250,100,50,grey)
                 
             if self.gold >= 15:
-                button("Game 3",880,250,100,50,orange,bright_orange,run)
+                button("Level 3 15G",880,250,100,50,orange,bright_orange,run)
             else:
-                text("Game 3",880,250,100,50,grey)
+                text("Level 3 15G",880,250,100,50,grey)
                 
             if self.gold >= 15:
-                button("Game 4",1030,250,100,50,orange,bright_orange,run)
+                button("Level 4 15G",1030,250,100,50,orange,bright_orange,run)
             else:
-                text("Game 4",1030,250,100,50,grey)
+                text("Level 4 15G",1030,250,100,50,grey)
                 
             button("Exit",1030,500,100,50,red,bright_red,self.escape)
 
             pygame.display.update()
             clock.tick(15)
-
+        self.blackout()
         return self.gold
 
 
