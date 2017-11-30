@@ -70,8 +70,8 @@ class Background(pygame.sprite.Sprite):
 BackGround = Background('equip.png', [0,0])
 
 class Equipment:
-    def __init__(self, PInven, PEquip):
-        self.PInven = PInven
+    def __init__(self, PEquip):
+        #self.PInven = PInven
         self.PEquip = PEquip
         
         self.weapon1 = 'none'
@@ -96,93 +96,93 @@ class Equipment:
             
         self.Run = True
         self.equip = True
-        self.currEquipArmor = self.PEquip.armor[1]
-        self.currEquipRing1 = self.PEquip.firstfinger[1]
-        self.currEquipRing2 = self.PEquip.secondfinger[1]
-        self.currEquipWeapon1 = self.PEquip.righthand[1]
-        self.currEquipWeapon2 = self.PEquip.lefthand[1]
+        #self.currEquipArmor = self.PEquip.armor[1]
+        #self.currEquipRing1 = self.PEquip.firstfinger[1]
+        #self.currEquipRing2 = self.PEquip.secondfinger[1]
+        #self.currEquipWeapon1 = self.PEquip.righthand[1]
+        #self.currEquipWeapon2 = self.PEquip.lefthand[1]
 
 # Button Controllers------------------------------------------------------------
             
     def equipPlatemail(self):
+        self.unequiparmor(self.PEquip.armor[1])
         if self.PEquip.armor[0] == False:
             self.PEquip.equipArmor('Platemail')
-            self.currEquipArmor = self.PEquip.armor[1]
-            
+
     def equipLeather(self):
+        self.unequiparmor(self.PEquip.armor[1])
         if self.PEquip.armor[0] == False:
             self.PEquip.equipArmor('Leather')
-            self.currEquipArmor = self.PEquip.armor[1]
 
     def equipChainmail(self):
+        self.unequiparmor(self.PEquip.armor[1])
         if self.PEquip.armor[0] == False:
             self.PEquip.equipArmor('Chainmail')
-            self.currEquipArmor = self.PEquip.armor[1]
             
     def equipTatteredRobes(self):
+        self.unequiparmor(self.PEquip.armor[1])
         if self.PEquip.armor[0] == False:
             self.PEquip.equipArmor('Tattered Robes')
-            self.currEquipArmor = self.PEquip.armor[1]
 
     def equipSword1(self):
+        self.unequiprighthand(self.PEquip.righthand[1])
         if self.PEquip.righthand[0] == False:
             self.PEquip.equipRighthand('Sword')
-            self.currEquipWeapon1 = self.PEquip.righthand[1]
 
     def equipSword2(self):
+        self.unequiplefthand(self.PEquip.lefthand[1])
         if self.PEquip.lefthand[0] == False:
             self.PEquip.equipLefthand('Sword')
-            self.currEquipWeapon2 = self.PEquip.lefthand[1]
 
     def equipDagger1(self):
+        self.unequiprighthand(self.PEquip.righthand[1])
         if self.PEquip.righthand[0] == False:
             self.PEquip.equipRighthand('Dagger')
-            self.currEquipWeapon1 = self.PEquip.righthand[1]
 
     def equipDagger2(self):
+        self.unequiplefthand(self.PEquip.lefthand[1])
         if self.PEquip.lefthand[0] == False:
             self.PEquip.equipLefthand('Dagger')
-            self.currEquipWeapon2 = self.PEquip.lefthand[1]
 
     def equipClub1(self):
+        self.unequiprighthand(self.PEquip.righthand[1])
         if self.PEquip.righthand[0] == False:
             self.PEquip.equipRighthand('Club')
-            self.currEquipWeapon1 = self.PEquip.righthand[1]
 
     def equipClub2(self):
+        self.unequiplefthand(self.PEquip.lefthand[1])
         if self.PEquip.lefthand[0] == False:
             self.PEquip.equipLefthand('Club')
-            self.currEquipWeapon2 = self.PEquip.lefthand[1]
 
     def equipBrokenStick1(self):
+        self.unequiprighthand(self.PEquip.righthand[1])
         if self.PEquip.righthand[0] == False:
             self.PEquip.equipRighthand('Broken Stick')
-            self.currEquipWeapon1 = self.PEquip.righthand[1]
 
     def equipBrokenStick2(self):
+        self.unequiplefthand(self.PEquip.lefthand[1])
         if self.PEquip.lefthand[0] == False:
             self.PEquip.equipLefthand('Broken Stick')
-            self.currEquipWeapon2 = self.PEquip.lefthand[1]
 
     def equipRingH1(self):
+        self.unequipfirstfinger(self.PEquip.firstfinger[1])
         if self.PEquip.firstfinger[0] == False:
             self.PEquip.equipFirstfinger('Ring of Health')
-            self.currEquipRing1 = self.PEquip.firstfinger[1]
 
     def equipRingH2(self):
+        self.unequipsecondfinger(self.PEquip.secondfinger[1])
         if self.PEquip.secondfinger[0] == False:
             self.PEquip.equipSecondfinger('Ring of Health')
-            self.currEquipRing2 = self.PEquip.secondfinger[1]
 
     def equipRingM1(self):
+        self.unequipfirstfinger(self.PEquip.firstfinger[1])
         if self.PEquip.firstfinger[0] == False:
             self.PEquip.equipFirstfinger('Ring of Mana')
-            self.currEquipRing1 = self.PEquip.firstfinger[1]
 
     def equipRingM2(self):
+        self.unequipsecondfinger(self.PEquip.secondfinger[1])
         if self.PEquip.secondfinger[0] == False:
             self.PEquip.equipSecondfinger('Ring of Mana')
-            self.currEquipRing2 = self.PEquip.secondfinger[1]
 
     def unequiparmor(self, item):
         if self.PEquip.armor[0] == False:
@@ -214,8 +214,10 @@ class Equipment:
         else:
             self.PEquip.removeSecondfinger(item)
 
-        
-# Back Controllers-----------------------------------------------------------------------------------
+            
+
+# Back Controllers----------------------------------------------------------------------------------
+
     def back(self):
         self.equip = False
 
@@ -254,36 +256,37 @@ class Equipment:
             largeText = pygame.font.SysFont("times", 60)
             medText = pygame.font.SysFont("times",30)      
 
-            if self.PInven.checkAmount('Platemail') > 0 and (
-                self.currEquipArmor != "Platemail"):
+            if self.PEquip.armor[1] == None:
+                text("No Armor", 500,100,200,50,grey)
+            else:
+                text(str(self.PEquip.armor[1]),500,100,200,50,amber)
+
+            if self.PEquip.inventory.checkAmount('Platemail') > 0 and (
+                self.PEquip.armor[1] != "Platemail"):
                 button("Platemail",150,250,150,50,amber,bright_amber,self.equipPlatemail)
             else:
                 text("Platemail",150,250,150,50,grey)
 
-            
-            if self.PInven.checkAmount('Leather') > 0 and (
-                self.currEquipArmor != "Leather"):
+            if self.PEquip.inventory.checkAmount('Leather') > 0 and (
+                self.PEquip.armor[1] != "Leather"):
                 button("Leather",150,450,150,50,amber,bright_amber,self.equipLeather)
             else:
                 text("Leather",150,450,150,50,grey)
 
-            if self.PInven.checkAmount('Chainmail') > 0 and (
-                self.currEquipArmor != "Chainmail"):
+            if self.PEquip.inventory.checkAmount('Chainmail') > 0 and (
+                self.PEquip.armor[1] != "Chainmail"):
                 button("Chainmail",900,450,150,50,amber,bright_amber,self.equipChainmail)
             else:
                 text("Chainmail",900,450,150,50,grey)
 
-            if self.PInven.checkAmount('Tattered Robes') > 0 and (
-                self.currEquipArmor != "Tattered Robes"):
+            if self.PEquip.inventory.checkAmount('Tattered Robes') > 0 and (
+                self.PEquip.armor[1] != "Tattered Robes"):
                 button("Tattered Robes",900,250,150,50,amber,bright_amber,self.equipTatteredRobes)
             else:
                 text("Tattered Robes",900,250,150,50,grey)
 
-            if self.currEquipArmor == None:
-                text("No Armor", 500,100,200,50,grey)
-            else:
-                button(str(self.currEquipArmor),500,100,200,50,amber,bright_amber,self.unequiparmor(self.currEquipArmor))
-
+         
+    
             button("Back", 1100,2,100,50,red,bright_red,self.back)
             
             pygame.display.update()
@@ -295,6 +298,9 @@ class Equipment:
 
     def weapon1equip(self):
 
+        #if self.equip == False:
+        self.equip == True
+            
         while self.equip:
             for event in pygame.event.get():
                 print(event)
@@ -307,35 +313,35 @@ class Equipment:
             largeText = pygame.font.SysFont("times", 60)
             medText = pygame.font.SysFont("times",30)
 
-            if self.PInven.checkAmount('Sword') > 0 and (
-                self.currEquipWeapon1 != "Sword"):
+            if self.PEquip.inventory.checkAmount('Sword') > 0 and (
+                self.PEquip.righthand[1] != "Sword"):
                 button("Sword",100,175,150,50,silver,bright_silver,self.equipSword1)
             else:
                 text("Sword",100,175,150,50,grey)
 
             
-            if self.PInven.checkAmount('Dagger') > 0 and (
-                self.currEquipWeapon1 != "Dagger"):
+            if self.PEquip.inventory.checkAmount('Dagger') > 0 and (
+                self.PEquip.righthand[1] != "Dagger"):
                 button("Dagger",75,500,150,50,silver,bright_silver,self.equipDagger1)
             else:
                 text("Dagger",75,500,150,50,grey)
 
-            if self.PInven.checkAmount('Club') > 0 and (
-                self.currEquipWeapon1 != "Club"):
+            if self.PEquip.inventory.checkAmount('Club') > 0 and (
+                self.PEquip.righthand[1] != "Club"):
                 button("Club",1000,500,150,50,silver,bright_silver,self.equipClub1)
             else:
                 text("Club",1000,500,150,50,grey)
 
-            if self.PInven.checkAmount('Broken Stick') > 0 and (
-                self.currEquipWeapon1 != "Broken Stick"):
+            if self.PEquip.inventory.checkAmount('Broken Stick') > 0 and (
+                self.PEquip.righthand[1] != "Broken Stick"):
                 button("Broken Stick",925,175,150,50,silver,bright_silver,self.equipBrokenStick1)
             else:
                 text("Broken Stick",925,175,150,50,grey)
 
-            if self.currEquipWeapon1 == None:
-                text("No Weapon In Right", 500,100,200,50,grey)
+            if self.PEquip.righthand[1] == None:
+                text("No Weapon", 500,100,200,50,grey)
             else:
-                button(str(self.currEquipWeapon1),500,100,200,50,silver,bright_silver,self.unequiprighthand(self.currEquipWeapon1))
+                text(str(self.PEquip.righthand[1]),500,100,200,50,silver)
 
             button("Back", 1100,2,100,50,red,bright_red,self.back)
             
@@ -360,35 +366,35 @@ class Equipment:
             largeText = pygame.font.SysFont("times", 60)
             medText = pygame.font.SysFont("times",30)
            
-            if self.PInven.checkAmount('Sword') > 0 and (
-                self.currEquipWeapon2 != "Sword"):
+            if self.PEquip.inventory.checkAmount('Sword') > 0 and (
+                self.PEquip.lefthand[1] != "Sword"):
                 button("Sword",100,175,150,50,silver,bright_silver,self.equipSword2)
             else:
                 text("Sword",100,175,150,50,grey)
 
             
-            if self.PInven.checkAmount('Dagger') > 0 and (
-                self.currEquipWeapon2 != "Dagger"):
+            if self.PEquip.inventory.checkAmount('Dagger') > 0 and (
+                self.PEquip.lefthand[1] != "Dagger"):
                 button("Dagger",75,500,150,50,silver,bright_silver,self.equipDagger2)
             else:
                 text("Dagger",75,500,150,50,grey)
 
-            if self.PInven.checkAmount('Club') > 0 and (
-                self.currEquipWeapon2 != "Club"):
+            if self.PEquip.inventory.checkAmount('Club') > 0 and (
+                self.PEquip.lefthand[1] != "Club"):
                 button("Club",1000,500,150,50,silver,bright_silver,self.equipClub2)
             else:
                 text("Club",1000,500,150,50,grey)
 
-            if self.PInven.checkAmount('Broken Stick') > 0 and (
-                self.currEquipWeapon2 != "Broken Stick"):
+            if self.PEquip.inventory.checkAmount('Broken Stick') > 0 and (
+                self.PEquip.lefthand[1] != "Broken Stick"):
                 button("Broken Stick",925,175,150,50,silver,bright_silver,self.equipBrokenStick2)
             else:
                 text("Broken Stick",925,175,150,50,grey)
 
-            if self.currEquipWeapon2 == None:
+            if self.PEquip.lefthand[1] == None:
                 text("No Weapon", 500,100,200,50,grey)
             else:
-                button(str(self.currEquipWeapon2),500,100,200,50,silver,bright_silver,self.unequiplefthand(self.currEquipWeapon2))
+                text(str(self.PEquip.lefthand[1]),500,100,200,50,silver)
 
             button("Back", 1100,2,100,50,red,bright_red,self.back)
             
@@ -413,23 +419,23 @@ class Equipment:
             largeText = pygame.font.SysFont("times", 60)
             medText = pygame.font.SysFont("times",30)
 
-            if self.PInven.checkAmount('Ring of Health') > 0 and (
-                self.currEquipRing1 != "Ring of Health"):
+            if self.PEquip.inventory.checkAmount('Ring of Health') > 0 and (
+                self.PEquip.firstfinger[1] != "Ring of Health"):
                 button("Ring of Health",100,300,150,50,blue,bright_blue,self.equipRingH1)
             else:
                 text("Ring of Health",100,300,150,50,grey)
 
 
-            if self.PInven.checkAmount('Ring of Mana') > 0 and (
-                self.currEquipRing1 != "Ring of Mana"):
+            if self.PEquip.inventory.checkAmount('Ring of Mana') > 0 and (
+                self.PEquip.firstfinger[1] != "Ring of Mana"):
                 button("Ring of Mana",925,300,150,50,blue,bright_blue,self.equipRingM1)
             else:
                 text("Ring of Mana",925,300,150,50,grey)
 
-            if self.currEquipRing1 == None:
+            if self.PEquip.firstfinger[1] == None:
                 text("No Ring", 500,315,200,50,grey)
             else:
-                button(str(self.currEquipRing1),500,315,200,50,blue,bright_blue,self.unequipfirstfinger(self.currEquipRing1))
+                text(str(self.PEquip.firstfinger[1]),500,315,200,50,blue)
 
             button("Back", 1100,2,100,50,red,bright_red,self.back)
             
@@ -454,23 +460,23 @@ class Equipment:
             largeText = pygame.font.SysFont("times", 60)
             medText = pygame.font.SysFont("times",30)
             
-            if self.PInven.checkAmount('Ring of Health') > 0 and (
-                self.currEquipRing2 != "Ring of Health"):
+            if self.PEquip.inventory.checkAmount('Ring of Health') > 0 and (
+                self.PEquip.secondfinger[1] != "Ring of Health"):
                 button("Ring of Health",100,300,150,50,blue,bright_blue,self.equipRingH2)
             else:
                 text("Ring of Health",100,300,150,50,grey)
 
 
-            if self.PInven.checkAmount('Ring of Mana') > 0 and (
-                self.currEquipRing2 != "Ring of Mana"):
+            if self.PEquip.inventory.checkAmount('Ring of Mana') > 0 and (
+                self.PEquip.secondfinger[1] != "Ring of Mana"):
                 button("Ring of Mana",925,300,150,50,blue,bright_blue,self.equipRingM2)
             else:
                 text("Ring of Mana",925,300,150,50,grey)
 
-            if self.currEquipRing2 == None:
+            if self.PEquip.secondfinger[1] == None:
                 text("No Ring", 500,315,200,50,grey)
             else:
-                button(str(self.currEquipRing2),500,315,200,50,blue,bright_blue,self.unequipsecondfinger(self.currEquipRing2))
+                text(str(self.PEquip.secondfinger[1]),500,315,200,50,blue)
 
             button("Back", 1100,2,100,50,red,bright_red,self.back)
             
@@ -500,11 +506,14 @@ class Equipment:
             button("Weapon 2",850,350,100,50,silver,bright_silver,self.weapon2equip)
             button("Exit",1030,500,100,50,red,bright_red,self.escape)
 
+            if self.equip == False:
+                self.equip = True
+
             
             
             pygame.display.update()
             clock.tick(15)
         self.blackout()
-        return self.currEquipArmor and self.currEquipWeapon1 and self.currEquipWeapon2 and self.currEquipRing1 and self.currEquipRing2
+        return str(self.PEquip.armor[1]) 
         
 
