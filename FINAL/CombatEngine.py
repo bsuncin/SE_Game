@@ -176,7 +176,15 @@ class Combat:
         self.enemy.hp -= self.rawDam
         self.enemyTurn()
 
-        
+    def skill(self):
+        if self.player.mana >= 20:
+            if self.player.health < (self.player.maxHealth-50):
+               self.player.health+=50
+               self.player.mana-=20
+            else:
+                self.player.health=self.player.maxHealth
+                self.player.mana-=20
+        self.enemyTurn()
     
     # Returns how much damage an enemy will do to the player
     def calcEnemyDamage(self):
@@ -200,9 +208,13 @@ class Combat:
             
             gameDisplay.blit(self.enemypic, (600,200))
 
-            
+
             text("Cur HP",200,100,100,50,white)
+            text("Enemy HP",200,150,100,50,white)
+            button("Heal Spell",100,700,100,50,green,bright_green,self.skill)
             text(str(self.player.health),300,100,100,50,white )
+            text(str(self.enemy.hp),300,150,100,50,white)
+            text(str(self.player.mana),100,650,100,50,white)
             button("Fight",300,700,100,50,green,bright_green,self.fight)
             button("Defend",500,700,100,50,green,bright_green,self.defend)  
             button("Run",700,700,100,50,red,bright_red,self.escape)
@@ -214,7 +226,7 @@ class Combat:
             if self.player.health <= 0:
                 self.plAlive = False
 
-            if self.enemy.hp <0:
+            if self.enemy.hp <=0:
                 self.enemyAlive = False
                 self.win()
 
