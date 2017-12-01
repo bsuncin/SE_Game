@@ -514,6 +514,6 @@ class Equipment:
             pygame.display.update()
             clock.tick(15)
         self.blackout()
-        return str(self.PEquip.armor[1]) 
+        return self.PEquip 
         
 
