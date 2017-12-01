@@ -196,7 +196,7 @@ class World:
         sleep, self.player.inventory.gold = inn.inn_intro()
 
         if sleep == True:
-            self.player.Health = self.player.maxHealth
+            self.player.health = self.player.maxHealth
 
     def dungeon(self):
         self.blackout()
