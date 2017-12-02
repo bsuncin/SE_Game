@@ -8,7 +8,7 @@ class Enemy:
                     self.armor    = armor
                     self.attack   = attack
                     self.mres     = mres
-                    self.xp       = xp
+                    self.strength = strength
                     self.agl      = agl
                     self.drops    = drops
                     
@@ -21,14 +21,14 @@ class Enemy:
 class Skeleton(Enemy):
           def __init__(self):
                     super().__init__(name ="Skeleton",
-                                    gold = 5,
+                                    gold = 50,
                                     desc = "Watch out for the skelly that drinks a lot of milk",
                                     hp = 100,
                                     mana = 200,
-                                    attack = 15,
+                                    attack = 10,
                                     armor = 0,
                                     mres = 0,
-                                    xp = 5,
+                                    strength = 5,
                                     agl = 8,
                                     drops=[("Leather", 20, 1),("Dagger", 50, 1),
                                            ("Health Potion", 29, 1),("Skelly Eye", 1, 1)] 
@@ -40,10 +40,10 @@ class ArmorSkeleton(Enemy):
                                     desc = "Spooky armored Skeleton, major doot doot",
                                     hp = 2000,
                                     mana = 1000,
-                                    attack = 105,
+                                    attack = 75,
                                     armor = 25,
                                     mres = 25,
-                                    xp = 30,
+                                    strength = 30,
                                     agl = 20,
                                     drops=[("Leather", 10, 1),("Dagger", 25, 1),
                                            ("Health Potion", 14, 1),("Skelly Eye", 1, 1)]
@@ -51,14 +51,14 @@ class ArmorSkeleton(Enemy):
 class Zombie(Enemy):
           def __init__(self):
                     super().__init__(name ="Zombie",
-                                    gold = 15,
+                                    gold = 75,
                                     desc = "Undead Humans that crave brains, youre safe though",
                                     hp = 150,
                                     mana = 200,
-                                    attack = 21,
+                                    attack = 15,
                                     armor = 5,
                                     mres = 5,
-                                    xp = 6,
+                                    strength = 6,
                                     agl = 4,
                                     drops=[("Leather", 1, 1), ("Health Potion", 2, 1),
                                            ("Mana Potion", 2, 1)]
@@ -71,10 +71,10 @@ class GiantSpider(Enemy):
                                     desc = "Dah hell you think it is -_- ",
                                     hp = 300,
                                     mana = 500,
-                                    attack = 40,
+                                    attack = 30,
                                     armor = 15,
                                     mres = 10,
-                                    xp = 10,
+                                    strength = 10,
                                     agl = 10,
                                     drops=[("Club", 2, 1), ("Health Potion", 6, 1),("Fang", 4, 2),
                                            ("Mana Potion", 6, 1), ("Ring of Health", 1, 1)]
@@ -86,10 +86,10 @@ class VampireAcolyte(Enemy):
                                     desc = "Humans that reaaaally wanna be a true vampy",
                                     hp = 200,
                                     mana = 500,
-                                    attack = 35,
+                                    attack = 25,
                                     armor = 10,
                                     mres = 20,
-                                    xp = 10,
+                                    strength = 10,
                                     agl = 8,
                                     drops=[("Sword", 4, 1), ("Health Potion", 10, 1),
                                            ("Mana Potion", 10, 1), ("Ring of Mana", 1, 1)]
@@ -101,10 +101,10 @@ class BlueHairedVampire(Enemy):
                                     desc = "The scariest darkest spookiest vampire out there",
                                     hp = 1000,
                                     mana = 2000,
-                                    attack = 80,
+                                    attack = 60,
                                     armor = 20,
                                     mres = 20,
-                                    xp = 20,
+                                    strength = 20,
                                     agl = 15,
                                     drops=[("Sword", 4, 1), ("Health Potion", 10, 3),
                                            ("Mana Potion", 6, 3), ("Ring of Health", 1, 1),
@@ -117,10 +117,10 @@ class LordPepe(Enemy):
                                     desc = "Lord of all who are antisocial, Slayer of normies and defender of Weebs",
                                     hp = 800,
                                     mana = 1000,
-                                    attack = 85,
+                                    attack = 65,
                                     armor = 20,
                                     mres = 20,
-                                    xp = 20,
+                                    strength = 20,
                                     agl = 15,
                                     drops=[("Sword", 4, 1), ("Health Potion", 10, 3),
                                            ("Mana Potion", 6, 3), ("Ring of Health", 2, 1),
@@ -134,10 +134,10 @@ class KingOrcha(Enemy):
                                     desc = "If a Orc and an Orca had a child dis be it ",
                                     hp = 2000,
                                     mana = 1000,
-                                    attack = 105,
+                                    attack = 75,
                                     armor = 25,
                                     mres = 25,
-                                    xp = 30,
+                                    strength = 30,
                                     agl = 20,
                                     drops=[("Ring of Health", 5, 1),("sword",3,1),("Platemail",2,1),
                                            ("Health Potion",5,3),("Mana Potion", 5, 3)] 
@@ -149,10 +149,10 @@ class OrchaMinion(Enemy):
                                     desc = "Penguins, theyre penguins.... ",
                                     hp = 10,
                                     mana = 100,
-                                    attack = 4,
+                                    attack = 2,
                                     armor = 0,
                                     mres = 0,
-                                    xp = 2,
+                                    strength = 2,
                                     agl = 20,
                                     drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1)] 
                                     )                    
@@ -163,10 +163,10 @@ class FlemSpitter(Enemy):
                                     desc = "Spits some nasty gook on ya",
                                     hp = 150,
                                     mana = 300,
-                                    attack = 35,
+                                    attack = 30,
                                     armor = 5,
                                     mres = 0,
-                                    xp = 5,
+                                    strength = 5,
                                     agl = 20,
                                     drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
@@ -178,10 +178,10 @@ class Velociraptor(Enemy):
                                     desc = "is clever girl",
                                     hp = 300,
                                     mana = 500,
-                                    attack = 45,
+                                    attack = 30,
                                     armor = 15,
                                     mres = 10,
-                                    xp = 15,
+                                    strength = 15,
                                     agl = 20,
                                     drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
@@ -194,10 +194,10 @@ class TheCage(Enemy):
                                     desc = "THE CAGE NEEDS NO INTRODUCTION",
                                     hp = 500,
                                     mana = 1000,
-                                    attack = 50,
+                                    attack = 30,
                                     armor = 30,
                                     mres = 15,
-                                    xp = 20,
+                                    strength = 20,
                                     agl = 30,
                                     drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
@@ -210,10 +210,10 @@ class Dragon(Enemy):
                                     desc = "a bigger clever girl",
                                     hp = 1500,
                                     mana = 2000,
-                                    attack = 105,
+                                    attack = 80,
                                     armor = 40,
                                     mres = 20,
-                                    xp = 25,
+                                    strength = 25,
                                     agl = 20,
                                     drops=[("Greater Health Potion", 3, 3),("Greater Mana Potion", 2, 3),
                                           ("Platemail", 4, 1), ("Ring of Health", 1, 1)] 
@@ -226,10 +226,10 @@ class EvilWhiteRabbit(Enemy):
                                     desc = "RUN AWAY RUN AWAY",
                                     hp = 200,
                                     mana = 500,
-                                    attack = 45,
+                                    attack = 30,
                                     armor = 5,
                                     mres = 5,
-                                    xp = 15,
+                                    strength = 15,
                                     agl = 50,
                                     drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
@@ -242,10 +242,10 @@ class ExGirlfriend(Enemy):
                                     desc = "ya dead son",
                                     hp = 4000,
                                     mana = 5000,
-                                    attack = 65,
+                                    attack = 50,
                                     armor = 10,
                                     mres = 10,
-                                    xp = 15,
+                                    strength = 15,
                                     agl = 15,
                                     drops=[("Fang", 5, 2),("Health Potion", 3, 1),("Mana Potion", 2, 1),
                                           ("Chainmail", 4, 1),("Leather", 5, 1), ("Ring of Health", 1, 1)] 
@@ -257,12 +257,12 @@ class Wolf(Enemy):
                                     desc = "big ol bork bork",
                                     hp = 200,
                                     mana = 500,
-                                    attack = 30,
+                                    attack = 20,
                                     armor = 5,
                                     mres = 5,
-                                    xp = 10,
+                                    strength = 10,
                                     agl = 15,
-                                    drops= [("Sword", 1, 1),("Fang", 4, 2),("Health Potion",3 , 1),("Mana Potion", 3,1)]
+                                    drops= [("Fang", 4, 2),("Health Potion",3 , 1),("Mana Potion", 3,1)]
                                     ) 
 
 class AlphaWolf(Enemy):
@@ -272,12 +272,12 @@ class AlphaWolf(Enemy):
                                     desc = "The biggest ol bork bork",
                                     hp = 400,
                                     mana = 1000,
-                                    attack = 55,
+                                    attack = 35,
                                     armor = 10,
                                     mres = 10,
-                                    xp = 20,
+                                    strength = 20,
                                     agl = 20,
-                                    drops= [("Sword", 1, 1),("Fang", 4, 2),("Health Potion",3 , 1),("Mana Potion", 3,1)]
+                                    drops= [("Fang", 4, 2),("Health Potion",3 , 1),("Mana Potion", 3,1)]
                                     ) 
                                             
 class HouseCat(Enemy):
@@ -287,27 +287,27 @@ class HouseCat(Enemy):
                                     desc = "Dont go for the belly, ITS A TRAP!!",
                                     hp = 150,
                                     mana = 200,
-                                    attack = 20,
+                                    attack = 15,
                                     armor = 5,
                                     mres = 5,
-                                    xp = 5,
+                                    strength = 5,
                                     agl = 20,
-                                    drops = [("Sword", 1, 1),("Fang", 4, 2),("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
                                     )
 
 class Bat(Enemy):
           def __init__(self):
                     super().__init__(name ="Bat",
-                                    gold = 10,
+                                    gold = 50,
                                     desc = "maybe youll become the batman",
                                     hp = 100,
                                     mana = 200,
-                                    attack = 20,
+                                    attack = 10,
                                     armor = 5,
                                     mres = 5,
-                                    xp = 10,
-                                    agl = 15,
-                                    drops = [("Sword", 1, 1),("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    strength = 10,
+                                    agl = 20,
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     )
 class LandDolphin(Enemy):
           def __init__(self):
@@ -316,12 +316,12 @@ class LandDolphin(Enemy):
                                     desc = "dat hell....dat dolphins on land",
                                     hp = 300,
                                     mana = 500,
-                                    attack = 40,
+                                    attack = 25,
                                     armor = 10,
                                     mres = 10,
-                                    xp = 15,
+                                    strength = 15,
                                     agl = 5,
-                                    drops = [("Sword", 1, 1),("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1, 1),("Mana Potion", 1 ,1)]
                                     ) 
    
 class Llamas(Enemy):
@@ -331,12 +331,12 @@ class Llamas(Enemy):
                                     desc = "CCCCAAAAARARRRRRLLLLLLLLLLLLL",
                                     hp = 250,
                                     mana = 500,
-                                    attack = 35,
+                                    attack = 20,
                                     armor = 10,
                                     mres = 10,
-                                    xp = 15,
+                                    strength = 15,
                                     agl = 10,
-                                    drops = [("Sword", 1, 1),("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
 
 class SludgeMonster(Enemy):
@@ -346,12 +346,12 @@ class SludgeMonster(Enemy):
                                     desc = "A big ball of slimmy trash that throws parts of itself at you",
                                     hp = 400,
                                     mana = 500,
-                                    attack = 55,
+                                    attack = 35,
                                     armor = 15,
                                     mres = 20,
-                                    xp = 20,
+                                    strength = 20,
                                     agl = 5,
-                                    drops = [("Sword", 1, 1),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
                     
 class LazerShark(Enemy):
@@ -361,12 +361,12 @@ class LazerShark(Enemy):
                                     desc = "A shark WIF LAZERS BROOOOO",
                                     hp = 400,
                                     mana = 500,
-                                    attack = 55,
+                                    attack = 35,
                                     armor = 15,
                                     mres = 20,
-                                    xp = 20,
+                                    strength = 20,
                                     agl = 5,
-                                    drops = [("Sword", 1, 1),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
     
 class Gerdzilla(Enemy):
@@ -376,16 +376,16 @@ class Gerdzilla(Enemy):
                                     desc = "rawr xD",
                                     hp = 700,
                                     mana = 1000,
-                                    attack = 75,
+                                    attack = 45,
                                     armor = 20,
                                     mres = 20,
-                                    xp = 30,
+                                    strength = 30,
                                     agl = 10,
-                                    drops = [("Sword", 1, 1),("Fang", 4, 2),("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
+                                    drops = [("Health Potion", 1 , 1),("Mana Potion", 1 ,1)]
                                     ) 
                     
                                             
-enemies = {'Skeleton'          : Skeleton(),               
+enemies = { 'Skeleton'          : Skeleton(),               
           'Armored Skeleton'    : ArmorSkeleton(),       
           'Zombie'              : Zombie(),                   
           'Giant Spider'        : GiantSpider(),             
@@ -407,15 +407,14 @@ enemies = {'Skeleton'          : Skeleton(),
           'Land Dolphin'        : LandDolphin(),
           'Sludge Monster'      : SludgeMonster(),
           'Lazer Shark'         : LazerShark(),
-          'Gerdzilla'           : Gerdzilla()
+          'Gerdzilla'           : Gerdzilla(),
+          'TheCage'             : TheCage()
         }
 
-enemyGroups = {'Skellies' :             ['Skeleton', 'Skeleton', 'Skeleton'],
+enemyGroups = { 'Skellies' :            ['Skeleton', 'Skeleton', 'Skeleton'],
                'Hard Skellies' :        ['Armored Skeleton', 'Skeleton', 'Skeleton'],
-               'Armored Skellies':      ['Armored Skeleton','Armored Skeleton','Armored Skeleton'],
                'Boss 1' :               ['Lord Pepe'],
                'Vamp Bitches' :         ['Blue Haired Vampire', 'Vampire Acolyte', 'Vampire Acolyte'],
-               'Blue Nightmare'         ['Blue Haired Vampire','Blue Haired Vampire','Blue Haired Vampire'],
                'Wolf Pack' :            ['Wolf', 'Wolf', 'Wolf'],
                'Aplha Pack' :           ['Alpha Wolf', 'Wolf', 'Wolf'],
                'Full Alpha' :           ['Alpha Wolf', 'Alpha Wolf', 'Alpha Wolf'],
@@ -427,8 +426,10 @@ enemyGroups = {'Skellies' :             ['Skeleton', 'Skeleton', 'Skeleton'],
                'Cute Group' :           ['House Cat', 'Evil White Rabbit', 'House Cat'],
                'Aqua Group' :           ['Lazer Shark', 'Land Dolphin', 'Land Dolphin'],
                'Garbage Group' :        ['Sludge Monster','Sludge Monster','Sludge Monster'],
-               'rawr xd Group' :        ['Gerdzilla', 'Velociraptor', 'Velociraptor'],
+               'Dino Group' :           ['Gerdzilla', 'Velociraptor', 'Velociraptor'],
                'Orcha Squad' :          ['King Orcha', 'Orcha Minion', 'Orcha Minion', 'Orcha Minion', 'Orcha Minion'],
-               'Boss 3' :               ['Ex-Girlfriend'],
-               'idk Group':             ['House Cat','The Cage','Lazer Shark']
+               'Boss 3' :               ['Ex-Girlfriend']
                }
+                                           
+                                           
+                                           

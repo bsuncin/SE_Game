@@ -172,7 +172,7 @@ class Headbutt(foodmachinebroke):
         super().__init__(name="Headbutt",
                          value=0,
                          desc="Nobody wins in a headbutt.",
-                         hcost=10,
+                         hcost=20,
                          mcost=0,
                          damage=20,
                          dtype="physcial",

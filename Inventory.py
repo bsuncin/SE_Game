@@ -96,6 +96,10 @@ class Inventory:
         if item in self.inventory:
             return self.inventory[item][0]
         return -1
+
+# getprice(item) will return the price of item.
+    def getPrice(self, item):
+        return I.items[item].value
     
 # getInventory() will return an array of the current inventory only 
 # including items with an amount above 0.

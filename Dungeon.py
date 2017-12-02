@@ -3,8 +3,9 @@ import time
 import random
 import Enemy
 import Player
-import CombatEngine
+import CombatEngine as CE
 import Items
+import Equip
 
 pygame.init()
 
@@ -21,6 +22,9 @@ bright_green = (0,255,0)
 grey = (128,128,128)
  
 block_color = (53,115,255)
+
+largeText = pygame.font.SysFont("times", 100)
+medText = pygame.font.SysFont("times",30)
  
 quitgame = pygame.quit
 gameDisplay = pygame.display.set_mode((display_width,display_height))
@@ -64,7 +68,7 @@ class Background(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.left, self.rect.top = location
 
-BackGround = Background('Shop.png', [0,0])
+BackGround = Background('B3.png', [0,0])
 
 
 
@@ -74,7 +78,7 @@ class Dungeon:
 
     def __init__(self, player, state):
         self.player = player
-        self.floor1 = ['Skeleton', 'Zombie', 'Gold Nug', 'Fang', 'none', 'poop', 'stick', 'Dagger', 'none', 'none', 'none', 'none', 'none']
+        self.floor1 = ['Skeleton', 'Zombie', 'Fang', 'none', 'poop', 'stick', 'Dagger', 'none', 'none', 'Dagger', 'Skeleton', 'Skeleton', 'Bat', 'Bat', 'Bat']
         self.floor2 = ['Skeleton', 'Zombie', 'Gold Nug', 'Fang', 'none', 'poop', 'stick', 'Dagger']
         self.floor3 = ['Skeleton', 'Zombie', 'Gold Nug', 'Fang', 'none', 'poop', 'stick', 'Dagger']
         self.floor4 = ['Skeleton', 'Zombie', 'Gold Nug', 'Fang', 'none', 'poop', 'stick', 'Dagger']
@@ -106,7 +110,7 @@ class Dungeon:
                        self.floor21, self.floor22, self.floor23, self.floor24, self.boss]
 
         self.state = state
-        self.escape = True
+        self.run = True
         self.events = random.randrange(10,20)
         self.currFloor = state * 5
         
@@ -127,6 +131,7 @@ class Dungeon:
         self.enemy = None
         self.event = None
         self.eventController = True
+        self.alive = True
         
 
 
@@ -139,10 +144,12 @@ class Dungeon:
         self.eventController = False
 
     def escape(self):
-        self.escape = True
+        self.run = False
 
     def combat(self):
-        CombatEngine.fight(self.player, self.event)
+        cb = CE.Combat(self.player, self.enemy)
+        self.alive, self.player = cb.combat_intro()
+        self.eventController = False
 
     def blackout(self):
         counter = 0
@@ -154,12 +161,6 @@ class Dungeon:
                 if event.type == pygame.QUIT:
                     break
             gameDisplay.fill(black)
-
-            if counter >= 5:
-                medText = pygame.font.SysFont("times",30)
-                TextSurf, TextRect = text_objects("You feel well rested!", medText, white)
-                TextRect.center = ((display_width/2),(display_height/2))
-                gameDisplay.blit(TextSurf, TextRect)
 
             pygame.display.update()
             clock.tick(15)
@@ -180,15 +181,18 @@ class Dungeon:
             
         elif event in Items.items:
             self.item = event
-            self.event = 'Item'
+            self.eventItem()
+            self.item = 'none'
 
         else:
             self.event = 'fight'
             self.enemy = event
+            self.eventCombat()
 
-    def eventPoop(self):
+    def eventItem(self):
         
-        dialog = 'You find some poop on the ground. \n Interesting'
+        dialog = 'You find a ' + self.item + ' on the ground.'
+        self.player.inventory.addItem(self.item, 1)
         
         while self.eventController:
             for event in pygame.event.get():
@@ -198,8 +202,6 @@ class Dungeon:
                     
             gameDisplay.fill(white)
             gameDisplay.blit(BackGround.image, BackGround.rect)
-            largeText = pygame.font.SysFont("times", 100)
-            medText = pygame.font.SysFont("times",30)
             TextSurf, TextRect = text_objects("Spoooky Dungeon", largeText, white)
             TextRect.center = ((display_width/2),(display_height/10))
 
@@ -209,7 +211,32 @@ class Dungeon:
             gameDisplay.blit(TextSurf, TextRect)
             gameDisplay.blit(TextMess, TextLoc)
             
-            button('Continue',800,250,100,50,green,bright_green,self.eventControl)
+            button('Continue',500,250,100,50,green,bright_green,self.eventControl)
+            pygame.display.update()
+            clock.tick(15)
+
+    def eventPoop(self):
+        
+        dialog = 'You find some poop on the ground. Interesting'
+        
+        while self.eventController:
+            for event in pygame.event.get():
+                print(event)
+                if event.type == pygame.QUIT:
+                    break
+                    
+            gameDisplay.fill(white)
+            gameDisplay.blit(BackGround.image, BackGround.rect)
+            TextSurf, TextRect = text_objects("Spoooky Dungeon", largeText, white)
+            TextRect.center = ((display_width/2),(display_height/10))
+
+            TextMess, TextLoc = text_objects(dialog, medText, white)
+            TextLoc.center = ((display_width/2),(display_height/4))
+            
+            gameDisplay.blit(TextSurf, TextRect)
+            gameDisplay.blit(TextMess, TextLoc)
+            
+            button('Continue',500,250,100,50,green,bright_green,self.eventControl)
             pygame.display.update()
             clock.tick(15)
 
@@ -226,8 +253,6 @@ class Dungeon:
                     
             gameDisplay.fill(white)
             gameDisplay.blit(BackGround.image, BackGround.rect)
-            largeText = pygame.font.SysFont("times", 100)
-            medText = pygame.font.SysFont("times",30)
             TextSurf, TextRect = text_objects("Spoooky Dungeon", largeText, white)
             TextRect.center = ((display_width/2),(display_height/10))
 
@@ -236,16 +261,18 @@ class Dungeon:
             
             gameDisplay.blit(TextSurf, TextRect)
             gameDisplay.blit(TextMess, TextLoc)
-            gameDisplay.blit(shopImg, (display_width/2 - 400,display_height/3))
+
             
-            button('Continue',800,250,100,50,green,bright_green,self.eventControl)
+            button('Continue',500,250,100,50,green,bright_green,self.eventControl)
             pygame.display.update()
             clock.tick(15)
 
             
     def eventStick(self):
         
-        dialog = 'You find an impressive stick on the ground. /n When you go to pick it up it jumped up and walked away. \n A little dissapointed you walk away.'
+        dialog = 'You find an impressive stick on the ground.'
+        dialog2 = 'When you go to pick it up it jumped up and walked away.'
+        dialog3 = 'A little dissapointed you walk away.'
         
         while self.eventController:
             for event in pygame.event.get():
@@ -259,15 +286,21 @@ class Dungeon:
             medText = pygame.font.SysFont("times",30)
             TextSurf, TextRect = text_objects("Spoooky Dungeon", largeText, white)
             TextRect.center = ((display_width/2),(display_height/10))
-
-            TextMess, TextLoc = text_objects(dialog, medText, white)
-            TextLoc.center = ((display_width/2),(display_height/4))
-            
             gameDisplay.blit(TextSurf, TextRect)
-            gameDisplay.blit(TextMess, TextLoc)
-            gameDisplay.blit(shopImg, (display_width/2 - 400,display_height/3))
             
-            button('Continue',800,250,100,50,green,bright_green,self.eventControl)
+            TextMess, TextLoc = text_objects(dialog, medText, white)
+            TextLoc.center = ((600),(200))
+            gameDisplay.blit(TextMess, TextLoc)
+
+            TextMess, TextLoc = text_objects(dialog2, medText, white)
+            TextLoc.center = ((600),(250))
+            gameDisplay.blit(TextMess, TextLoc)
+
+            TextMess, TextLoc = text_objects(dialog3, medText, white)
+            TextLoc.center = ((600),(300))
+            gameDisplay.blit(TextMess, TextLoc)
+            
+            button('Continue',600,600,100,50,green,bright_green,self.eventControl)
             pygame.display.update()
             clock.tick(15)
 
@@ -293,12 +326,16 @@ class Dungeon:
             
             gameDisplay.blit(TextSurf, TextRect)
             gameDisplay.blit(TextMess, TextLoc)
-            gameDisplay.blit(shopImg, (display_width/2 - 400,display_height/3))
             
-            button('Fight',800,250,100,50,green,bright_green,self.combat)
-            button('Run Away',800,250,100,50,green,bright_green,self.eventControl)
+            button('Fight',500,250,100,50,green,bright_green,self.combat)
+            button('Run Away',500,350,100,50,green,bright_green,self.eventControl)
             pygame.display.update()
             clock.tick(15)
+
+    def equip(self):
+        self.blackout()
+        eq = Equip.Equipment(self.player)
+        self.player = eq.Equip()
     
 
 # initial Dungeon--------------------------------------------------------------------
@@ -308,7 +345,7 @@ class Dungeon:
         dialog = random.choice(self.intro)
         
 
-        while self.escape:
+        while self.run and self.alive:
             for event in pygame.event.get():
                 print(event)
                 if event.type == pygame.QUIT:
@@ -327,8 +364,8 @@ class Dungeon:
             gameDisplay.blit(TextSurf, TextRect)
             gameDisplay.blit(TextMess, TextLoc)
             
-            button('Search',800,250,100,50,green,bright_green,self.event)
-            button('Equip',800,350,100,50,green,bright_green,self.event)
+            button('Search',800,250,100,50,green,bright_green,self.search)
+            button('Equip',800,350,100,50,green,bright_green,self.equip)
             button('Escape',800,450,100,50,red,bright_red,self.escape)
 
             if self.eventController == False:
@@ -338,10 +375,9 @@ class Dungeon:
             pygame.display.update()
             clock.tick(15)
 
-        return self.PInven
+        return self.alive, self.player, self.state
 
         
-
 
 
 

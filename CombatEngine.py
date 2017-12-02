@@ -83,11 +83,11 @@ class Combat:
         self.run = True
         self.plAlive = True
         self.playerW1 = 0
-        if self.player.firsthand[0] == True:
-            self.playerW1 = Items.items[self.player.firsthand[1]].damage
+        if self.player.righthand[0] == True:
+            self.playerW1 = Items.items[self.player.righthand[1]].damage
         self.playerW2 = 0
-        if self.player.secondhand[0] == True:
-            self.playerW2 = Items.items[self.player.secondhand[1]].damage
+        if self.player.lefthand[0] == True:
+            self.playerW2 = Items.items[self.player.lefthand[1]].damage
 
         self.rawDam = self.playerW1 + self.playerW2 + self.player.strength
         self.enemyAlive = True

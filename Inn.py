@@ -1,7 +1,6 @@
 import pygame
 import time
 import random
-import AltMenu
 import Items
 
 pygame.init()
@@ -65,7 +64,7 @@ class Background(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.left, self.rect.top = location
 
-BackGround = Background('hotel.jpg', [0,0])
+BackGround = Background('Inn.png', [0,0])
 
 #-------------------------------------------------------------------------------------
 
@@ -101,6 +100,7 @@ class Inn:
         
         self.run = True
         self.sleep = False
+        self.rest = False
 
 
 # Controllers-------------------------------------------------------------------
@@ -114,7 +114,7 @@ class Inn:
     def stay(self):
         self.gold -= 15
         self.sleep = True
-
+        self.rest = True
         self.blackout()
 
     def blackout(self):
@@ -144,7 +144,7 @@ class Inn:
 # Starting the Inn-----------------------------------------------------------------------------
 
 
-    def inn(self):
+    def inn_intro(self):
         dialog = random.choice(self.dialog1)
 
         while self.run:
@@ -157,10 +157,10 @@ class Inn:
             gameDisplay.blit(BackGround.image, BackGround.rect)
             largeText = pygame.font.SysFont("times", 100)
             medText = pygame.font.SysFont("times",30)
-            TextSurf, TextRect = text_objects("Inn of Dreams", largeText, black)
+            TextSurf, TextRect = text_objects("Inn of Dreams", largeText, white)
             TextRect.center = ((display_width/2),(display_height/10))
 
-            TextMess, TextLoc = text_objects(dialog, medText, black)
+            TextMess, TextLoc = text_objects(dialog, medText, white)
             TextLoc.center = ((display_width/2),(display_height/4))
             
             gameDisplay.blit(TextSurf, TextRect)
@@ -182,7 +182,7 @@ class Inn:
             pygame.display.update()
             clock.tick(15)
 
-        return self.gold
+        return self.rest, self.gold
 
 
 
@@ -199,10 +199,10 @@ class Inn:
             gameDisplay.blit(BackGround.image, BackGround.rect)
             largeText = pygame.font.SysFont("times", 100)
             medText = pygame.font.SysFont("times",30)
-            TextSurf, TextRect = text_objects("Inn of Dreams", largeText, black)
+            TextSurf, TextRect = text_objects("Inn of Dreams", largeText, white)
             TextRect.center = ((display_width/2),(display_height/10))
 
-            TextMess, TextLoc = text_objects(dialog, medText, black)
+            TextMess, TextLoc = text_objects(dialog, medText, white)
             TextLoc.center = ((display_width/2),(display_height/4))
             
             gameDisplay.blit(TextSurf, TextRect)
@@ -224,8 +224,7 @@ class Inn:
             pygame.display.update()
             clock.tick(15)
 
-        return self.gold
-
+        return self.rest, self.gold
 
 
 

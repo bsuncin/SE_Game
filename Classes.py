@@ -83,4 +83,4 @@ class Duelist(Class):
                          lvl = 1,
                          damRes = 3,
                          health = 5,
-                         mana = 10) 
+                         mana = 10)    

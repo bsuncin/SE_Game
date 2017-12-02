@@ -424,9 +424,9 @@ class Shop:
             text(str(self.PInven.checkAmount('Ring of Health') - self.buttons['Ring of Health']),350,300,50,50,white)
 
             if self.PInven.checkAmount('Ring of Health') == self.buttons['Ring of Health']:
-                text("-->",400,250,50,50,grey)
+                text("-->",400,300,50,50,grey)
             else:
-                button("-->",400,250,50,50,red, bright_red,self.increaseROH)
+                button("-->",400,300,50,50,red, bright_red,self.increaseROH)
             
             text(str(int(self.PInven.getPrice('Ring of Health')/2) * self.buttons['Ring of Health']) + "G",450,300,100,50,green)
 
@@ -448,9 +448,9 @@ class Shop:
             text(str(self.PInven.checkAmount('Sword') - self.buttons['Sword']),350,550,50,50,white)
 
             if self.PInven.checkAmount('Sword') == self.buttons['Sword']:
-                text("-->",400,250,50,50,grey)
+                text("-->",400,550,50,50,grey)
             else:
-                button("-->",400,250,50,50,red, bright_red,self.increaseSword)
+                button("-->",400,550,50,50,red, bright_red,self.increaseSword)
             
             text(str(int(self.PInven.getPrice('Sword') / 2) * self.buttons['Sword']) + "G",450,550,100,50,green)
 
@@ -472,9 +472,9 @@ class Shop:
             text(str(self.PInven.checkAmount('Health Potion') - self.buttons['Health Potion']),350,350,50,50,white)
 
             if self.PInven.checkAmount('Health Potion') == self.buttons['Health Potion']:
-                text("-->",400,250,50,50,grey)
+                text("-->",400,350,50,50,grey)
             else:
-                button("-->",400,250,50,50,red, bright_red,self.increaseHealthPotion)
+                button("-->",400,350,50,50,red, bright_red,self.increaseHealthPotion)
             
             text(str(int(self.PInven.getPrice('Health Potion')/2) * self.buttons['Health Potion']) + "G",450,350,100,50,green)
 
@@ -496,9 +496,9 @@ class Shop:
             text(str(self.PInven.checkAmount('Mana Potion') - self.buttons['Mana Potion']),350,400,50,50,white)
 
             if self.PInven.checkAmount('Mana Potion') == self.buttons['Mana Potion']:
-                text("-->",400,250,50,50,grey)
+                text("-->",400,400,50,50,grey)
             else:
-                button("-->",400,250,50,50,red, bright_red,self.increaseManaPotion)
+                button("-->",400,400,50,50,red, bright_red,self.increaseManaPotion)
             
             text(str(int(self.PInven.getPrice('Mana Potion')/2) * self.buttons['Mana Potion']) + "G",450,400,100,50,green)
 
@@ -520,9 +520,9 @@ class Shop:
             text(str(self.PInven.checkAmount('Skelly Eye') - self.buttons['Skelly Eye']),350,450,50,50,white)
 
             if self.PInven.checkAmount('Skelly Eye') == self.buttons['Skelly Eye']:
-                text("-->",400,250,50,50,grey)
+                text("-->",400,450,50,50,grey)
             else:
-                button("-->",400,250,50,50,red, bright_red,self.increaseSkellyEye)
+                button("-->",400,450,50,50,red, bright_red,self.increaseSkellyEye)
             
             text(str(int(self.PInven.getPrice('Skelly Eye')/2) * self.buttons['Skelly Eye']) + "G",450,450,100,50,green)
 
@@ -544,9 +544,9 @@ class Shop:
             text(str(self.PInven.checkAmount('Leather') - self.buttons['Leather']),350,500,50,50,white)
 
             if self.PInven.checkAmount('Leather') == self.buttons['Leather']:
-                text("-->",400,250,50,50,grey)
+                text("-->",400,500,50,50,grey)
             else:
-                button("-->",400,250,50,50,red, bright_red,self.increaseLeather)
+                button("-->",400,500,50,50,red, bright_red,self.increaseLeather)
             
             text(str(int(self.PInven.getPrice('Leather')/2) * self.buttons['Leather']) + "G",450,500,100,50,green)
 
@@ -1310,3 +1310,12 @@ class Shop:
             clock.tick(15)
         self.blackout()
         return self.PInven
+
+        
+
+
+
+
+
+
+
